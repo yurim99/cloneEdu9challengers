@@ -1,12 +1,12 @@
 .main-stage {
     height: 910px;
-    background-image: url(/images/component/main_visual.png);
+    background-image: url(../images/component/main_visual.png);
 }
 
 .main__tit {
     width: 1157px;
     height: 180px;
-    background-image: url(/images/component/main_tit.png);
+    background-image: url(../images/component/main_tit.png);
    margin: 0 auto;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .main__semicircle-border {
-    background-image: url(/images/component/main_semicirecle-bg.png);
+    background-image: url(../images/component/main_semicirecle-bg.png);
     width: 1153px;
     height: 578px;
     position: relative;
@@ -56,7 +56,7 @@
 }
 
 .part01 {
-    background-image: url(/images/component/part01_on.png);
+    background-image: url(../images/component/part01_on.png);
     width: 574px;
     height: 370px;
     bottom: 1px;
@@ -64,13 +64,13 @@
 }
 
 .part01::before {
-    background-image: url(/images/component/part01_off.png);
+    background-image: url(../images/component/part01_off.png);
     left: 0;
     bottom: 0;
 }
 
 .part02 {
-    background-image: url(/images/component/part02_on.png);
+    background-image: url(../images/component/part02_on.png);
     width: 539px;
     height: 574px;
     bottom: 1px;
@@ -78,12 +78,12 @@
 }
 
 .part02::before {
-    background-image: url(/images/component/part02_off.png);
+    background-image: url(../images/component/part02_off.png);
     left: -137px;
 }
 
 .part03 {
-    background-image: url(/images/component/part03_on.png);
+    background-image: url(../images/component/part03_on.png);
     width: 574px;
     height: 566px;
     right: 2px;
@@ -91,7 +91,7 @@
 }
 
 .part03::before {
-    background-image: url(/images/component/part03_off.png);
+    background-image: url(../images/component/part03_off.png);
     right: 2px;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .sub__semicircle {
-    background-image: url(/images/component/sub_semicircle.png);
+    background-image: url(../images/component/sub_semicircle.png);
     width: 534px;
     height: 276px;
     bottom: 1px;
@@ -111,7 +111,7 @@
 }
 
 .mini__semicircle {
-    background-image: url(/images/component/mini_semicircle.png);
+    background-image: url(../images/component/mini_semicircle.png);
     width: 244px;
     height: 123px;
     bottom: 2px;
@@ -120,7 +120,7 @@
 }
 
 .mini__semicircle-arrow {
-    background-image: url(/images/component/main__semicircle-arrow.png);
+    background-image: url(../images/component/main__semicircle-arrow.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 185px;
@@ -141,16 +141,21 @@
 
 .semicircle-ctrl-wrap {
     width: 100%;
-    background-image: url(/images/component/cauge-bar-off.png);
+    background-image: url(../images/component/cauge-bar-off.png);
 }
 
 .semicircle-ctrl__on {
     position: relative;
     z-index: 1;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 0;
     height: 55px;
-    background-image: url(/images/component/cauge-bar-on.png);
+    background-image: url(../images/component/cauge-bar-on.png);
+    transition: all 1.5s linear;
+}
+
+.semicircle-ctrl__on.active {
+    width: 100%;
 }
 
 .semicircle__ctrl-btn {
@@ -159,9 +164,15 @@
     height: 82px;
     cursor: pointer;
     z-index: 2;
-    background-image: url(/images/component/cauge-bar-btn.png);
+    background-image: url(../images/component/cauge-bar-btn.png);
     background-repeat: no-repeat;
     background-position: center;
     top: -13px;
     left: 0;
-}   
+    transition: all 1.5s linear;
+}
+
+.semicircle__ctrl-btn.active {
+    left: initial;
+    left: calc(100% - 100px);
+}
