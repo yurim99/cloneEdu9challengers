@@ -1,0 +1,133 @@
+.main-stage {
+    height: 910px;
+    background-image: url(/images/component/main_visual.png);
+}
+
+.main__tit {
+    width: 1157px;
+    height: 180px;
+    background-image: url(/images/component/main_tit.png);
+   margin: 0 auto;
+}
+
+.main-wrapper {
+    padding: 10px 0;
+    width: 1150px;
+    margin: 0 auto;
+}
+
+.semicircle {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.main__semicircle {
+    margin-top: 17px;
+    width: 1153px;
+    height: 578px;
+    position: relative;
+}
+
+.main__semicircle-border {
+    background-image: url(/images/component/main_semicirecle-bg.png);
+    width: 1153px;
+    height: 578px;
+    position: relative;
+    z-index: 10;
+}
+
+/* .parts {} */
+
+.part {
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+}
+
+.part::before {
+    content: '';
+    display: block;
+    background-repeat: no-repeat;
+    width: 1147px;
+    height: 575px;
+    position: absolute;
+    z-index: 1;
+    bottom: 1px;
+}
+
+.part01 {
+    background-image: url(/images/component/part01_on.png);
+    width: 574px;
+    height: 370px;
+    bottom: 1px;
+    left: 1px;
+}
+
+.part01::before {
+    background-image: url(/images/component/part01_off.png);
+    left: 0;
+    bottom: 0;
+}
+
+.part02 {
+    background-image: url(/images/component/part02_on.png);
+    width: 539px;
+    height: 574px;
+    bottom: 1px;
+    left: 137px;
+}
+
+.part02::before {
+    background-image: url(/images/component/part02_off.png);
+    left: -137px;
+}
+
+.part03 {
+    background-image: url(/images/component/part03_on.png);
+    width: 574px;
+    height: 566px;
+    right: 2px;
+    bottom: 1px;
+}
+
+.part03::before {
+    background-image: url(/images/component/part03_off.png);
+    right: 2px;
+}
+
+.semicircle__small {
+    position: absolute;
+    transform: translate(-50%);
+    background-size: contain;
+}
+
+.sub__semicircle {
+    background-image: url(/images/component/sub_semicircle.png);
+    width: 534px;
+    height: 276px;
+    bottom: 1px;
+    z-index: 2;
+    left: calc(50% + 2px);
+}
+
+.mini__semicircle {
+    background-image: url(/images/component/mini_semicircle.png);
+    width: 244px;
+    height: 123px;
+    bottom: 2px;
+    z-index: 11;
+    left: 50%;
+}
+
+.mini__semicircle-arrow {
+    background-image: url(/images/component/main__semicircle-arrow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 185px;
+    height: 71px;
+    position: absolute;
+    bottom: -24px;
+    z-index: 12;
+    left: calc(50% - 60px);
+    transform: translateX(-50%);
+}
