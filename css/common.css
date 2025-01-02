@@ -1,4 +1,9 @@
 /* 공통 */
+*:focus-visible {
+    outline: 2px dotted red;
+    outline-offset: -2px;
+}
+
 .container {
     min-width: 1024px;
 }
