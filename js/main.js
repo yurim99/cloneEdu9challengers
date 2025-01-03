@@ -6,5 +6,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
         semicircleCtrlBtn.classList.add('deco-hide')
         semicircleCtrlBtn.classList.toggle('active');
         semicircleCtrlOn.classList.toggle('active');
+        
+        let arrow = document.querySelector('.mini__semicircle-arrow');
+        let arrowCurRotation = arrow.style.transform;
+        let arrowNewRotation = arrowCurRotation === "rotate(180deg)" ? "rotate(0deg)" : "rotate(180deg)";
+        arrow.style.transform = arrowNewRotation;
     });
 });

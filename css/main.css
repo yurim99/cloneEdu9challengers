@@ -30,7 +30,7 @@
     width: 1153px;
     height: 578px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .main__semicircle-border {
@@ -133,8 +133,9 @@
     position: absolute;
     bottom: -24px;
     z-index: 12;
-    left: calc(50% - 60px);
-    transform: translateX(-50%);
+    left: 425px;
+    transform-origin: 154px 42px;
+    transition: all 2s linear;
 }
 
 .semicircle__ctrl {
@@ -156,7 +157,7 @@
     width: 0;
     height: 55px;
     background-image: url(../images/component/main/cauge-bar-on.png);
-    transition: all 1.5s linear;
+    transition: all 2s linear;
 }
 
 .semicircle-ctrl__on.active {
@@ -174,7 +175,7 @@
     background-position: center;
     top: -13px;
     left: 0;
-    transition: all 1.5s linear;
+    transition: all 2s linear;
 }
 
 
