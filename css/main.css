@@ -177,6 +177,25 @@
     transition: all 1.5s linear;
 }
 
+
+.semicircle__ctrl-btn::after {
+    content: '';
+    display: block;
+    background-image: url(../images/common/hand.png);
+    width: 73px;
+    height: 86px;
+    position: absolute;
+    top: 20px;
+    left: 70px;
+    animation: 2s click_ani infinite linear forwards;
+    transition: all .15s ease-in;
+}
+
+.deco-hide::after {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .semicircle__ctrl-btn.active {
     left: initial;
     left: calc(100% - 100px);
@@ -271,6 +290,7 @@
     animation-duration: 3s;
     animation-name: run_ani;
     animation-iteration-count: initial;
+    z-index: 1;
 }
 
 .twist__ani {
@@ -454,5 +474,17 @@
     }
     100% {
         top: -160px;
+    }
+}
+
+@keyframes click_ani {
+    0%{
+        left: 70px;
+    }
+    50%{
+        left: 170px;
+    }
+    100%{
+        left: 70px;
     }
 }
