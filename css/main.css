@@ -75,11 +75,15 @@
     background-image: url(../images/component/main/part01_off.png);
     left: 0;
     bottom: 0;
-    
+    transform: rotate(0deg);
 }
 
-.part01.active::before {
+.part01.show::before {
     transform: rotate(40deg);
+}
+
+.part01.hide::before {
+    transform: rotate(0);
 }
 
 .part02 {
@@ -96,8 +100,13 @@
     left: -137px;
 }
 
-.part02.active::before {
+.part02.show::before {
     transform: rotate(60deg);
+}
+
+.part02.hide::before {
+    transform: rotate(0deg);
+    transition: .5s linear;
 }
 
 .part03 {
@@ -115,8 +124,13 @@
     transition: 1.5s linear;
 }
 
-.part03.active::before {
+.part03.show::before {
     transform: rotate(180deg);
+}
+
+.part03.hide::before {
+    transform: rotate(0deg);
+    transition: .8s linear;
 }
 
 .semicircle__small {
