@@ -47,6 +47,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
+    overflow: hidden;
 }
 
 .part::before {
@@ -58,6 +59,8 @@
     position: absolute;
     z-index: 1;
     bottom: 1px;
+    transition: .5s linear;
+    transform-origin: center bottom;
 }
 
 .part01 {
@@ -65,13 +68,18 @@
     width: 574px;
     height: 370px;
     bottom: 1px;
-    left: 1px;
+    left: 1px;   
 }
 
 .part01::before {
     background-image: url(../images/component/main/part01_off.png);
     left: 0;
     bottom: 0;
+    
+}
+
+.part01.active::before {
+    transform: rotate(40deg);
 }
 
 .part02 {
@@ -80,11 +88,16 @@
     height: 574px;
     bottom: 1px;
     left: 137px;
+    z-index: 1;
 }
 
 .part02::before {
     background-image: url(../images/component/main/part02_off.png);
     left: -137px;
+}
+
+.part02.active::before {
+    transform: rotate(60deg);
 }
 
 .part03 {
@@ -93,11 +106,17 @@
     height: 566px;
     right: 2px;
     bottom: 1px;
+    z-index: 2;
 }
 
 .part03::before {
     background-image: url(../images/component/main/part03_off.png);
     right: 2px;
+    transition: 1.5s linear;
+}
+
+.part03.active::before {
+    transform: rotate(180deg);
 }
 
 .semicircle__small {
