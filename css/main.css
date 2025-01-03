@@ -63,6 +63,14 @@
     transform-origin: center bottom;
 }
 
+.part>.sr-only.hide {
+    visibility: hidden;
+}
+
+.part.show>.sr-only.hide {
+    visibility: visible;
+}
+
 .part01 {
     background-image: url(../images/component/main/part01_on.png);
     width: 574px;
@@ -191,10 +199,12 @@
     height: 55px;
     background-image: url(../images/component/main/cauge-bar-on.png);
     transition: all 2s linear;
+    visibility: hidden;
 }
 
 .semicircle-ctrl__on.active {
     width: 100%;
+    visibility: visible;
 }
 
 .semicircle__ctrl-btn {
