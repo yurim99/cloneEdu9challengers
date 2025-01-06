@@ -14,12 +14,6 @@
     position: relative;
 }
 
-
-.sr-only.hide {
-    display: none;
-}
-
-
 /* header */
 .header-stage {
     width: 100%;

@@ -2,15 +2,25 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const semicircleCtrlBtn = document.querySelector('.semicircle__ctrl-btn');
     const semicircleCtrlOn = document.querySelector('.semicircle-ctrl__on');
     let isReversed = false;
+    let isClicking = false;
     
     semicircleCtrlBtn.addEventListener('click', function() {
+        if(isClicking) return;
+        isClicking = true;
+        
+        setTimeout(() => {
+            isClicking = false;
+        }, 2250);
+
         semicircleCtrlBtn.classList.add('deco-hide');
         semicircleCtrlBtn.classList.toggle('active');
         semicircleCtrlOn.classList.toggle('active');
         
         const arrow = document.querySelector('.mini__semicircle-arrow');
-        arrow.style.transform = window.getComputedStyle(arrow).transform === 'none' ? 'rotate(181deg)' : 'rotate(0deg)';
-
+        const arrowCurRotation = window.getComputedStyle(arrow).transform;
+        const newRotation = (arrowCurRotation === 'matrix(1, 0, 0, 1, 0, 0)' || arrowCurRotation === 'none') ? 'rotate(181deg)' : 'rotate(0deg)';
+        arrow.style.transform = newRotation;
+        
         const parts = document.querySelector('.parts');
         const part = Array.from(parts.children);
 
