@@ -54,3 +54,55 @@
     top: 0;
     height: 36px;
 }
+
+/* quick-menu */
+.quick-menu-stage {
+    position: fixed;
+    z-index: 9;
+    top: 125px;
+    right: 30px;
+    width: 100px;
+    height: 248px;
+    background-image: url(../images/common/quick-menu_bg.png);
+    background-repeat: no-repeat;
+}
+
+.quick-menu__lists {
+    padding-top: 112px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+}
+
+.quick-menu__icon {
+    display: block;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+}
+
+.quick-menu__icon.youtube {
+    background-image: url(../images/common/icon_youtube.png);
+}
+
+.quick-menu__icon.insta {
+    background-image: url(../images/common/icon_insta.png);
+}
+
+.quick-menu__icon.blog {
+    background-image: url(../images/common/icon_blog.png);
+}
+
+.quick-menu__icon.facebook {
+    background-image: url(../images/common/icon_facebook.png);
+}
+
+.quick-menu__icon.kakao {
+    background-image: url(../images/common/icon_kakaostory.png);
+}
+
+.quick-menu__icon.X {
+    background-image: url(../images/common/icon_X.png);
+}
