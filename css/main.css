@@ -2,7 +2,7 @@
     width: 1903px;
     margin: 0 auto;
     overflow: hidden;
-    height: 910px;
+    height: 903px;
     background-image: url(../images/component/main/main_visual.png);
     background-position: center;
 }
@@ -558,5 +558,59 @@
 
 /* card news */
 .card-news-stage {
+    background-image: url(../images/component/cardNews/cardnews_bg.png);
+    height: 1130px;
+}
 
+.card-news__tit {
+    padding-top: 155px;
+    text-align: center;
+}
+
+.card-news__tit > img {
+    min-width: 847px;
+}
+
+.card-news-pop__lists {
+    padding-top: 85px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card-news-pop__list {
+    flex: 1 1 calc(25% - 20px*3/4);
+    width: 100%;
+    max-width: calc(25% - 20px*3/4);
+}
+
+.card-news-pop__btn {
+    cursor: pointer;
+    width: 335px;
+    height: 335px;
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.card-news-pop__btn::after {
+    content: '';
+    display: block;
+    background-image: url(../images/component/cardNews/card-news-pop__btn-deco.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    right: 10px;
+    bottom: 10px;
+    transition: all .15s ease-in;
+}
+
+.card-news-pop__btn:hover:after {
+    scale: 1.1;
 }
