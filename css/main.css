@@ -221,6 +221,9 @@
     transition: all 2s linear;
 }
 
+.semicircle__ctrl-btn:focus-visible {
+    transition: all 0s;
+}
 
 .semicircle__ctrl-btn::after {
     content: '';
@@ -321,7 +324,7 @@
     height: 235px;
     top: -160px;
     left: 10px;
-    animation-duration: s;
+    animation-duration: 3s;
     animation-name: updown_ani;
 }
 
@@ -389,6 +392,15 @@
     animation-duration: 3s;
 }
 
+.deco.scroll {
+    background-image: url(../images/component/main/scroll.png);
+    width: 48px;
+    height: 66px;
+    right: 60px;
+    top: 400px;
+    animation-duration: 1s;
+    animation-name: scroll_ani;
+}
 
 /* animation */
 @keyframes book_ani {
@@ -531,4 +543,20 @@
     100%{
         left: 70px;
     }
+}
+
+@keyframes scroll_ani {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 450px;
+    }
+}
+
+
+/* card news */
+.card-news-stage {
+
 }
