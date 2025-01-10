@@ -68,10 +68,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
     
     const cardNewsBtns = document.querySelectorAll('.card-news-pop__btn');
     const cardNewsPopup = document.querySelector('.card-news__popup');
-
     cardNewsBtns.forEach(cardNewBtn => {
         cardNewBtn.addEventListener('click', function() {
             cardNewsPopup.classList.add('active');
         });
     });
+    
+    const cardNewsSwriper = new Swiper('.card-news__swriper', {
+        navigation : {
+            prevEl:'.popup-swiper___btn.prev',
+            nextEl:'.popup-swiper___btn.next',
+        }
+    })
 });

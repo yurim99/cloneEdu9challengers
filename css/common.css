@@ -255,6 +255,7 @@ body:has(.dim.active) {
     border-radius: 50%;
     background-repeat: no-repeat;
     background-size: contain;
+    transition: all .15s ease-in;
 }
 
 .popup-swiper___btn.prev {
@@ -263,4 +264,8 @@ body:has(.dim.active) {
 
 .popup-swiper___btn.next {
     background-image: url(../images/component/cardNews/cardnews_btn-next.png);
+}
+
+.swiper-button-disabled {
+    opacity: .5;
 }
