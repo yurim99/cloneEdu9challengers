@@ -66,18 +66,49 @@ window.addEventListener("DOMContentLoaded", (event) => {
         popupClose()
     })
     
-    const cardNewsBtns = document.querySelectorAll('.card-news-pop__btn');
-    const cardNewsPopup = document.querySelector('.card-news__popup');
-    cardNewsBtns.forEach(cardNewBtn => {
-        cardNewBtn.addEventListener('click', function() {
-            cardNewsPopup.classList.add('active');
-        });
-    });
-    
     const cardNewsSwriper = new Swiper('.card-news__swriper', {
         navigation : {
             prevEl:'.popup-swiper___btn.prev',
             nextEl:'.popup-swiper___btn.next',
-        }
-    })
+        },
+        speed: 500,
+    });
+
+    const cardNewImgs = {
+        cardNew01: [
+            "./images/component/cardNews/cardnews_swiper01_01.png",
+            "./images/component/cardNews/cardnews_swiper01_02.png",
+            "./images/component/cardNews/cardnews_swiper01_03.png",
+            "./images/component/cardNews/cardnews_swiper01_04.png",
+            "./images/component/cardNews/cardnews_swiper01_05.png",
+            "./images/component/cardNews/cardnews_swiper01_06.png",
+            "./images/component/cardNews/cardnews_swiper01_07.png",
+            "./images/component/cardNews/cardnews_swiper01_08.png",
+            "./images/component/cardNews/cardnews_swiper01_09.png",
+        ]
+    }
+
+    const cardNewsBtns = document.querySelectorAll('.card-news-pop__btn');
+    const cardNewsPopup = document.querySelector('.card-news__popup');
+    cardNewsBtns.forEach(cardNewBtn => {
+        cardNewBtn.addEventListener('click', function() {
+            const cardNewsBtnId = cardNewBtn.id;
+            const cardNewsImg = cardNewImgs[cardNewsBtnId];
+
+            if(cardNewsImg) {
+                const cardNewSwiperWrapper = document.querySelector('.card-news__swriper .swiper-wrapper');
+                cardNewSwiperWrapper.innerHTML = '';
+
+                cardNewsImg.forEach(src => {
+                    const cardNewSlide = document.createElement('div');
+                    cardNewSlide.className = 'swiper-slide';
+                    cardNewSlide.innerHTML = `<img class="popup__img" src="${src}" alt="">`
+                    cardNewSwiperWrapper.appendChild(cardNewSlide);
+                });
+                cardNewsSwriper.update();
+            }
+
+            cardNewsPopup.classList.add('active');
+        });
+    });
 });

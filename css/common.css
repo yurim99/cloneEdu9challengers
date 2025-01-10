@@ -13,6 +13,7 @@
 
 body {
     position: relative;
+    transition: all .15s ease-in;
 }
 
 body:has(.dim.active) {
