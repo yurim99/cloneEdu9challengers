@@ -1,5 +1,5 @@
 .main-stage {
-    width: 1903px;
+    max-width: 1920px;
     margin: 0 auto;
     overflow: hidden;
     height: 903px;
@@ -560,6 +560,11 @@
 .card-news-stage {
     background-image: url(../images/component/cardNews/cardnews_bg.png);
     height: 1130px;
+    position: relative;
+    top: -1px;
+    max-width: 1920px;
+    background-position: center;
+    margin: 0 auto;
 }
 
 .card-news__tit {
@@ -612,5 +617,7 @@
 }
 
 .card-news-pop__btn:hover:after {
+    right: 15px;
+    bottom: 15px;
     scale: 1.1;
 }

@@ -1,8 +1,24 @@
+@charset "UTF-8";
+
 /* 공통 */
+:root {
+    --color-yellow : #edab1d;
+}
+
 *:focus-visible {
     outline: 2px dotted red;
     outline-offset: -2px;
 }
+
+
+body {
+    position: relative;
+}
+
+body:has(.dim.active) {
+    overflow: hidden;
+}
+
 
 .container {
     min-width: 1200px;
@@ -13,6 +29,23 @@
     background-size: cover;
     position: relative;
 }
+
+.dim {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #000000cc;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .15s ease-in;
+}
+
+.dim.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 
 /* header */
 .header-stage {
@@ -105,4 +138,129 @@
 
 .quick-menu__icon.X {
     background-image: url(../images/common/icon_X.png);
+}
+
+/* popup */
+.popup {
+    position: fixed;
+    z-index: 11;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup__head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.popup__head>p {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.popup__close {
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: -55px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.popup__close::before,
+.popup__close::after {
+    content: '';
+    display: block;
+    width: 55px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.popup__close::before {
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.popup__close::after {
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.popup__body {
+    box-sizing: border-box;
+}
+
+.popup__img {
+    width: 100%;
+}
+
+.popup__footer {
+    padding: 0 2rem 2rem;
+    background-color: #fff;
+}
+
+/* 카드뉴스 팝업 */
+.card-news__popup {
+    box-sizing: border-box;
+    width: 640px;
+}
+
+.card-news__popup >.popup__head {
+    border-radius: 30px 30px 0 0;
+    height: 80px;
+    background-color: var(--color-yellow);
+}
+
+.card-news__popup > .popup__body {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.card-news__popup .popup__img{
+    max-width: 600px;
+    height: 600px;
+}
+
+.card-news__popup .popup__footer {
+    border-radius: 0 0 30px 30px;
+    position: relative;
+    top: -1px;
+} 
+
+.popup-swiper___btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.popup-swiper___btn {
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.popup-swiper___btn.prev {
+    background-image: url(../images/component/cardNews/cardnews_btn-prev.png);
+}
+
+.popup-swiper___btn.next {
+    background-image: url(../images/component/cardNews/cardnews_btn-next.png);
 }
