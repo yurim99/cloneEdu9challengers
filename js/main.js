@@ -37,34 +37,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
             isReversed = !isReversed;
         }, order.length * 750);
     });
-
-    const dim = document.querySelector('.dim');
-    const popupBtn = document.querySelectorAll('.popup__btn');
-    const popup = document.querySelectorAll('.popup');
-    const popupCloseBtn = document.querySelectorAll('.popup__close');
-    
-    popupBtn.forEach(btn => {
-        btn.addEventListener('click', function(){
-            dim.classList.add('active');
-        })
-    }); 
-    
-    function popupClose() {
-        dim.classList.remove('active');
-        popup.forEach(popup => {
-            popup.classList.remove('active');
-        });
-    }
-
-    popupCloseBtn.forEach(btn => {
-        btn.addEventListener('click', function(){
-            popupClose()
-        })
-    }); 
-    
-    dim.addEventListener('click', function() {
-        popupClose()
-    })
     
     const cardNewsSwriper = new Swiper('.card-news__swriper', {
         navigation : {
@@ -177,7 +149,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
                 cardNewSwiperWrapper.appendChild(cardNewSlide);
             });
             cardNewsSwriper.update();
-
 
             cardNewsPopup.classList.add('active');
         });
