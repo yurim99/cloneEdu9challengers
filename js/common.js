@@ -51,7 +51,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         btn.addEventListener('click', function() {
             dim.classList.add('active');
             popups.forEach(popupElement => {
-                popupElement.classList.add('active');
                 openPopup(popupElement);
             });
         });

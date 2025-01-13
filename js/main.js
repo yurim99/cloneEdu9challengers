@@ -153,4 +153,31 @@ window.addEventListener("DOMContentLoaded", (event) => {
             cardNewsPopup.classList.add('active');
         });
     });
+
+    const youtubeData = {
+        youtube01: {
+            link:`<iframe width="560" height="315" src="https://www.youtube.com/embed/XFXudlMnE_4?si=J5_0427C14G_Jujg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+        },
+        youtube02: {
+            link:``
+        },
+    }
+
+    const youtubeBtns = document.querySelectorAll('.youtube-pop__btn');
+    const youtubePopup = document.querySelector('.youtube__popup');
+    youtubeBtns.forEach(youtubeBtn => {
+        youtubeBtn.addEventListener('click', function() {
+            const youtubeBtnId = youtubeBtn.id;
+            const youtubeBody = document.querySelector('.youtube__popup .popup__body');
+            
+            youtubeBody.innerHTML = '';
+            youtubeData[youtubeBtnId].links.forEach( link => {
+                const youtube = document.createElement('div');
+                youtube.className = 'youtube';
+                youtube.innerHTML = `${link}`
+            });
+
+            youtubePopup.classList.add('active');
+        })
+    });
 });
