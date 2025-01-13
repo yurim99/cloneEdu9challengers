@@ -1,3 +1,6 @@
+@charset "UTF-8";
+
+/* 메인 비주얼 */
 .main-stage {
     max-width: 1920px;
     margin: 0 auto;
@@ -556,7 +559,7 @@
 }
 
 
-/* card news */
+/* 카드뉴스 */
 .card-news-stage {
     background-image: url(../images/component/cardNews/cardnews_bg.png);
     height: 1130px;
@@ -567,9 +570,12 @@
     margin: 0 auto;
 }
 
+.stage__tit {
+    text-align: center;
+}
+
 .card-news__tit {
     padding-top: 155px;
-    text-align: center;
 }
 
 .card-news__tit > img {
@@ -626,4 +632,51 @@
     overflow: hidden;
     box-sizing: border-box;
     border: 3px solid #000;
+}
+
+/* 동영상 */
+.youtube-stage {
+    background-image: url(../images/component/youtube/youtube_bg.png);
+    height: 1510px;
+}
+
+.youtube-wrapper {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.youtube__tit {
+    padding-top: 125px;
+}
+
+.youtube__lists {
+    margin-top: 85px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.youtube-pop__btn {
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 30px;
+    position: relative;
+}
+
+.youtube-pop__btn::after {
+    content: '';
+    display: block;
+    background-image: url(../images/component/youtube/youtube_deco.png);
+    width: 74px;
+    height: 74px;
+    position: absolute;
+    z-index: 1;
+    top: calc(50% - 30px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .15s ease-in;
+}
+
+.youtube-pop__btn:hover::after {
+    scale: 1.1;
 }
