@@ -47,6 +47,20 @@ body:has(.dim.active) {
     visibility: visible;
 }
 
+.video-stage {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+}
+
+.video-stage>.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 /* header */
 .header-stage {
@@ -209,11 +223,6 @@ body:has(.dim.active) {
     width: 100%;
 }
 
-.popup__footer {
-    padding: 0 2rem 2rem;
-    background-color: #fff;
-}
-
 /* 카드뉴스 팝업 */
 .card-news__popup {
     box-sizing: border-box;
@@ -240,7 +249,9 @@ body:has(.dim.active) {
     border-radius: 0 0 30px 30px;
     position: relative;
     top: -1px;
-} 
+    padding: 0 2rem 2rem;
+    background-color: #fff;
+}
 
 .popup-swiper___btns {
     display: flex;

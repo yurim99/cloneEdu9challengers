@@ -680,3 +680,24 @@
 .youtube-pop__btn:hover::after {
     scale: 1.1;
 }
+
+.youtube__popup {
+    width: 940px;
+}
+
+.youtube__popup .popup__head {
+    padding-top: 20px;
+    background-color: var(--color-yellow);
+    border-radius: 20px 20px 0 0;
+}
+
+.youtube__popup .popup__body {
+    padding: 0 20px 20px;
+    border-radius: 0 0 20px 20px;
+    background-color: var(--color-yellow);
+}
+
+.youtube__popup .video-stage {
+    border-radius: 15px;
+    overflow: hidden;
+}
