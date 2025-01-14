@@ -10,13 +10,6 @@
     background-position: center;
 }
 
-.main__tit {
-    width: 1157px;
-    height: 180px;
-    background-image: url(../images/component/main/main_tit.png);
-    margin: 0 auto;
-}
-
 .main-wrapper {
     padding: 10px 0;
     width: 1150px;
@@ -700,4 +693,27 @@
 .youtube__popup .video-stage {
     border-radius: 15px;
     overflow: hidden;
+}
+
+/* 이벤트 */
+.event-stage {
+    background-image: url(../images/component/event/event_bg.png);
+}
+
+.event__tit {
+    padding-top: 120px;
+}
+
+.event-wrapper {
+    width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.event__present {
+    padding: 45px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
