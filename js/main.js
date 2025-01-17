@@ -231,9 +231,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
 
     const keywordBtns = document.querySelectorAll('.event-keyword__btn');
-    keywordBtns.forEach(keywordBtn => {
-        keywordBtn.addEventListener('click', function(){
-            keywordBtn.classList.add('on')
+    let currentIndex = 0;
+    keywordBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function () {
+            if (index === currentIndex) {
+                this.classList.add('on');
+                currentIndex++;
+            } else {
+                alert('순서대로 클릭해주세요.');
+            }
         });
-    })
+    });
 });
