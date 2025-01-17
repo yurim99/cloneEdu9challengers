@@ -698,6 +698,7 @@
 /* 이벤트 */
 .event-stage {
     background-image: url(../images/component/event/event_bg.png);
+    height: 1736px;
 }
 
 .event__tit {
@@ -712,8 +713,128 @@
 }
 
 .event__present {
-    padding: 45px 0;
+    padding: 45px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.event__content {
+    width: 100%;
+    height: 840px;
+    background-image: url(../images/component/event/event_content-wrap.png);
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 118px 75px 0 70px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.event__content::after {
+    content: '';
+    display: block;
+    background-image: url(../images/component/event/event__content-deco.png);
+    width: 480px;
+    height: 324px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 17px;
+}
+
+.event-keyword__list + .event-keyword__list {
+    padding-top: 37px;
+}
+
+.event-keyword__btn {
+    background-repeat: no-repeat;
+    width: 343px;
+    height: 94px;
+    border-radius: 94px;
+    cursor: pointer;
+    transition: all .15s ease-in;
+    position: relative;
+}
+
+.event-keyword__btn::before,
+.event-keyword__btn::after {
+    content: '';
+    display: block;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.event-keyword__btn::before {
+    background-image: url(../images/common/hand.png);
+    width: 73px;
+    height: 86px;
+    right: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+.keyword__btn01::before {
+
+}
+
+.event-keyword__btn::after {
+    background-image: url(../images/component/event/deco-check.png);
+    width: 84px;
+    height: 68px;
+    top: 0;
+    right: -14px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.event-keyword__btn.on::after {
+   opacity: 1;
+   visibility: visible; 
+}
+
+.keyword__btn01 {
+    background-image: url(../images/component/event/keyword__btn01-off.png);
+}
+.keyword__btn01.on {
+    background-image: url(../images/component/event/keyword__btn01-on.png);
+}
+.keyword__btn02 {
+    background-image: url(../images/component/event/keyword__btn02-off.png);
+}
+.keyword__btn02.on {
+    background-image: url(../images/component/event/keyword__btn02-on.png);
+}
+.keyword__btn03 {
+    background-image: url(../images/component/event/keyword__btn03-off.png);
+}
+.keyword__btn03.on {
+    background-image: url(../images/component/event/keyword__btn03-on.png);
+}
+.keyword__btn04 {
+    background-image: url(../images/component/event/keyword__btn04-off.png);
+}
+.keyword__btn04.on {
+    background-image: url(../images/component/event/keyword__btn04-on.png);
+}
+
+.event-drop-wrap {
+    background-image: url(../images/component/event/event-drop-wrap.png);
+    background-repeat: no-repeat;
+    width: 680px;
+    height: 481px;
+    position: relative;
+}
+
+.drop__zone {
+    background-image: url(../images/component/event/drop_zone.png);
+    background-repeat: no-repeat;
+    width: 343px;
+    height: 94px;
+    border-radius: 94px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 105px;
 }

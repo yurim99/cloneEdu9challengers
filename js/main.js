@@ -229,4 +229,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
             youtubePopup.classList.add('active');
         })
     });
+
+    const keywordBtns = document.querySelectorAll('.event-keyword__btn');
+    keywordBtns.forEach(keywordBtn => {
+        keywordBtn.addEventListener('click', function(){
+            keywordBtn.classList.add('on')
+        });
+    })
 });
