@@ -763,6 +763,9 @@
     display: block;
     background-repeat: no-repeat;
     position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .15s ease-in;
 }
 
 .event-keyword__btn::before {
@@ -770,13 +773,85 @@
     width: 73px;
     height: 86px;
     right: 0;
+    top: 20px;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
+    z-index: 1;
+    animation-duration: 2s;
 }
 
-.keyword__btn01::before {
+.event-keyword__lists:not(:has(.active)) .keyword__btn01::before {
+    opacity: 1;
+    visibility: visible;
+    animation-name: keyword01;
+}
 
+@keyframes keyword01 {
+    0% {
+        right: 0;
+        top: 0;
+    }
+    100% {
+        right: -500px;
+        top: 300px;
+    }
+}
+
+.event-keyword__lists:has(.keyword__btn01.on) .keyword__btn02::before {
+    opacity: 1;
+    visibility: visible;
+    animation-name: keyword02;
+}
+
+@keyframes keyword02 {
+    0% {
+        right: 0;
+        top: 0;
+    }
+    100% {
+        right: -500px;
+        top: 200px;
+    }
+}
+
+.event-keyword__lists:has(.keyword__btn02.on)  .keyword__btn03::before {
+    opacity: 1;
+    visibility: visible;
+    animation-name: keyword03;
+}
+
+@keyframes keyword03 {
+    0% {
+        right: 0;
+        top: 0;
+    }
+    100% {
+        right: -500px;
+        top: 50px;
+    }
+}
+
+.event-keyword__lists:has(.keyword__btn03.on)  .keyword__btn04::before {
+    opacity: 1;
+    visibility: visible;
+    animation-name: keyword04;
+}
+
+@keyframes keyword04 {
+    0% {
+        right: 0;
+        top: 0;
+    }
+    100% {
+        right: -500px;
+        top: -80px;
+    }
+}
+
+.event-keyword__btn.on::before {
+    visibility: hidden !important;
+    opacity: 0 !important;
 }
 
 .event-keyword__btn::after {
@@ -785,8 +860,6 @@
     height: 68px;
     top: 0;
     right: -14px;
-    opacity: 0;
-    visibility: hidden;
 }
 
 .event-keyword__btn.on::after {
