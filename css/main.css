@@ -757,8 +757,7 @@
     z-index: 1;
     transition: all .15s ease-in;
     animation-timing-function: linear;
-    /* animation-iteration-count: infinite; */
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -976,5 +975,60 @@
     100% {
         top: -114px;
         left: 624px;
+    }
+}
+
+.event01__popup .popup__footer {
+    height: 70px;
+    margin-top: 20px;
+}
+
+.event01__popup .popup__footer .popup__close {
+    background-image: url(../images/component/event/event01-popup__close.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 253px;
+    height: 70px;
+    margin: 0 auto;
+    position: relative;
+    right: 0;
+    top: 0;
+    border-radius: 70px;
+}
+
+.event01__popup .popup__footer .popup__close.join {
+    background-image: url(../images/component/event/event01-popup__join.png);
+    width: 317px;
+}
+
+.event01__popup .popup__footer .popup__close::before {
+    content: '';
+    display: block;
+    background-image: url(../images/common/hand.png);
+    width: 73px;
+    height: 86px;
+    top: 20px;
+    left: initial;
+    right: 0;
+    position: absolute;
+    animation: 1s eventClick infinite linear forwards;
+    background-color: transparent;
+    transition: all .15s ease-in;
+    transform: initial;
+}
+
+.event01__popup .popup__footer .popup__close::after {
+    display: none;
+}
+
+@keyframes eventClick {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.1;
+    }
+    100% {
+        scale: 1;
     }
 }

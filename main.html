@@ -190,7 +190,7 @@
         <!-- st 팝업 - 카드뉴스 -->
         <aside class="popup card-news__popup">
             <div class="popup__head">
-                <p id="cardNewsPopupTit" class="popup-head__tit">교육개혁 9대 과제</p>
+                <p id="cardNewsPopupTit" class="popup-head__tit"></p>
                 <button type="button" class="popup__close btn" title="팝업닫기"></button>
             </div>
             <div class="popup__body">
@@ -325,22 +325,22 @@
                     <div>
                         <ul class="event-keyword__lists">
                             <li class="event-keyword__list">
-                                <button type="button" class="event-keyword__btn keyword__btn01">
+                                <button id="keyword01" type="button" class="event-keyword__btn keyword__btn01">
                                     <p class="sr-only">1. 그 시작은?</p>
                                 </button>
                             </li>
                             <li class="event-keyword__list">
-                                <button type="button" class="event-keyword__btn keyword__btn02">
+                                <button id="keyword02" type="button" class="event-keyword__btn keyword__btn02">
                                     <p class="sr-only">2. 그래서?</p>
                                 </button>
                             </li>
                             <li class="event-keyword__list">
-                                <button type="button" class="event-keyword__btn keyword__btn03">
+                                <button id="keyword03" type="button" class="event-keyword__btn keyword__btn03">
                                     <p class="sr-only">3. 그 9대 과제는?</p>
                                 </button>
                             </li>
                             <li class="event-keyword__list">
-                                <button type="button" class="event-keyword__btn keyword__btn04">
+                                <button id="keyword04" type="button" class="event-keyword__btn keyword__btn04">
                                     <p class="sr-only">4. 기대효과!</p>
                                 </button>
                             </li>
@@ -350,9 +350,7 @@
                     <div class="event-drop-wrap">
                         <strong class="sr-only">교육개혁 9대 과제</strong>
                         <p class="sr-only">각 키워드를 아래 빈칸에 넣으면 그 이야기를 볼 수 있어요.</p>
-                        <div class="drop__zone">
-
-                        </div>
+                        <div class="drop__zone"></div>
                     </div>
                 </div>
             </div>
@@ -362,12 +360,17 @@
         <!-- st 이벤트1 팝업 -->
          <aside class="event01__popup popup">
             <div class="popup__head">
+                <p id="event01PopupTit" class="popup-head__tit sr-only"></p>
                 <button type="button" class="popup__close btn" title="팝업닫기"></button>
             </div>
             <div class="popup__body">
-                <div class="event01-stage"></div>
+                <div class="event01-stage">
+                    <!-- <img src="./images/component/event/event01-popup__bg-01.png" alt=""> -->
+                </div>
             </div>
-            <div class="popup__footer"></div>
+            <div class="popup__footer">
+                <button type="button" class="popup__close btn" title="확인하기"></button>
+            </div>
         </aside>
     </div>
 </body>

@@ -219,6 +219,10 @@ body:has(.dim.active) {
     box-sizing: border-box;
 }
 
+.popup__footer {
+    position: relative;
+}
+
 .popup__img {
     width: 100%;
 }

@@ -163,42 +163,42 @@ window.addEventListener("DOMContentLoaded", (event) => {
         youtube02: {
             midea: [
                 { type: "video", src: 'https://www.youtube.com/embed/61fVEbQjmSI?si=oXtMK8VX5A5srQ7V' },
-            ], 
+            ],
         },
         youtube03: {
             midea: [
                 { type: "video", src: 'https://www.youtube.com/embed/bZsyWEJFlQo?si=SnRddh539oTA4TzO' },
-            ], 
+            ],
         },
         youtube04: {
             midea: [
                 { type: "video", src: 'https://www.youtube.com/embed/tiGKOaeKwto?si=epJUoWg5H5MG2h5v' },
-            ], 
+            ],
         },
         youtube05: {
             midea: [
                 { type: "video", src: 'https://www.youtube.com/embed/yG7JrRtFY08?si=f6B9Cxa2AO2pAjy9' },
-            ], 
+            ],
         },
         youtube06: {
             midea: [
                 { type: "video", src: 'https://www.youtube.com/embed/-ZUoWn6uvlc?si=E2w2dTyL3U1TPfNJ' },
-            ], 
+            ],
         },
         youtube07: {
             midea: [
                 { type: "video", src: 'https://www.youtube.com/embed/oSP5lWYgRzg?si=QK_jePeyCltZ0OJW' },
-            ], 
+            ],
         },
         youtube08: {
             midea: [
                 { type: "video", src: 'https://www.youtube.com/embed/YxKuJqPTAl4?si=0_9lHKEftzhYq5ds' },
-            ], 
+            ],
         },
         youtube09: {
             midea: [
                 { type: "video", src: 'https://www.youtube.com/embed/TXnM-qllQpw?si=BsinorufYXvM-77L' },
-            ], 
+            ],
         },
     }
 
@@ -222,7 +222,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                 iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
                 iframe.allowFullscreen = true;
                 iframe.classList.add('video');
-    
+
                 videoStage.appendChild(iframe);
             }
 
@@ -230,28 +230,84 @@ window.addEventListener("DOMContentLoaded", (event) => {
         })
     });
 
+    const keywordData = {
+        keyword01: {
+            title: '01. 그 시작은?',
+            images: { src: './images/component/event/event01-popup__bg-01.png' }
+        },
+        keyword02: {
+            title: '02. 그래서?',
+            images: { src: './images/component/event/event01-popup__bg-02.png' }
+        },
+        keyword03: {
+            title: '03. 9대과제는?',
+            images: { src: './images/component/event/event01-popup__bg-03.png' }
+        },
+        keyword04: {
+            title: '04. 기대효과!',
+            images: { src: './images/component/event/event01-popup__bg-04.png' }
+        },
+    }
+
     const keywordBtns = document.querySelectorAll('.event-keyword__btn');
     const event01Popup = document.querySelector('.event01__popup');
     let currentIndex = 0;
-    keywordBtns.forEach((btn, index) => {
-        btn.addEventListener('click', function () {
-            if (index === currentIndex) {
-                this.classList.add('move');
-                
-                setTimeout(()=> {
-                    this.classList.remove('move');
-                    this.classList.add('on');
+    const allOn = Array.from(keywordBtns).every(keywordBtn => keywordBtn.classList.contains('on'));
 
-                    event01Popup.classList.add('active');
+    keywordBtns.forEach((keywordBtn, index) => {
+        keywordBtn.addEventListener('click', function () {
+            const isAllOn = typeof allOn === 'function' ? allOn() : allOn;
 
-                    const dim = document.querySelector('.dim');
-                    dim.classList.add('active');
-                }, 1500);
-                currentIndex++;
-                
-            } else {
-                alert('순서대로 클릭해주세요.');
+            if (isAllOn) {
+                alert('모두 확인했습니다. 다음 영역으로 이동해주세요.');
+                return;
             }
+
+            if (index !== currentIndex) {
+                alert('순서대로 클릭해주세요.');
+                return;
+            }
+
+            this.classList.add('move');
+
+            setTimeout(() => {
+                this.classList.remove('move');
+                this.classList.add('on');
+
+                if (index === 3) {
+                    const event01PopupFooter = document.querySelector('.event01__popup .popup__footer');
+                    event01PopupFooter.innerHTML = '';
+                    const joinButton = document.createElement('button');
+                    joinButton.className = 'popup__close btn join';
+                    joinButton.title = '이벤트 참여하기';
+
+                    joinButton.addEventListener('click', function() {
+                        alert('이벤트가 끝났습니다. 상단에 X버튼을 클릭해주세요.');
+                        return;
+                    })
+                    event01PopupFooter.appendChild(joinButton);
+                }
+
+                const keywordInfo = keywordData[keywordBtn.id];
+                const event01PopupTit = document.getElementById('event01PopupTit');
+                event01PopupTit.textContent = keywordInfo.title;
+
+                const event01Stage = document.querySelector('.event01-stage');
+                event01Stage.innerHTML = '';
+                const event01Img = document.createElement('div');
+                event01Img.innerHTML = `<img src="${keywordInfo.images.src}" alt="">`;
+                event01Stage.appendChild(event01Img);
+
+                const event01Popup = document.querySelector('.event01__popup');
+                event01Popup.classList.add('active');
+
+                const dim = document.querySelector('.dim');
+                dim.classList.add('active');
+
+            }, 1000);
+
+            currentIndex++;
         });
     });
+
 });
