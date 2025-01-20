@@ -1032,3 +1032,13 @@
         scale: 1;
     }
 }
+
+/* 이벤트2 */
+.step-stage {
+    background-image: url(../images/component/step/step_bg.png);
+    height: 2340px;
+}
+
+.step__tit {
+    padding-top: 120px;
+}
