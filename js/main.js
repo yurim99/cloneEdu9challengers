@@ -231,12 +231,24 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
 
     const keywordBtns = document.querySelectorAll('.event-keyword__btn');
+    const event01Popup = document.querySelector('.event01__popup');
     let currentIndex = 0;
     keywordBtns.forEach((btn, index) => {
         btn.addEventListener('click', function () {
             if (index === currentIndex) {
-                this.classList.add('on');
+                this.classList.add('move');
+                
+                setTimeout(()=> {
+                    this.classList.remove('move');
+                    this.classList.add('on');
+
+                    event01Popup.classList.add('active');
+
+                    const dim = document.querySelector('.dim');
+                    dim.classList.add('active');
+                }, 1500);
                 currentIndex++;
+                
             } else {
                 alert('순서대로 클릭해주세요.');
             }

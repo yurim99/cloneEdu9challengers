@@ -753,8 +753,13 @@
     height: 94px;
     border-radius: 94px;
     cursor: pointer;
-    transition: all .15s ease-in;
     position: relative;
+    z-index: 1;
+    transition: all .15s ease-in;
+    animation-timing-function: linear;
+    /* animation-iteration-count: infinite; */
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
 }
 
 .event-keyword__btn::before,
@@ -781,7 +786,7 @@
     animation-duration: 2s;
 }
 
-.event-keyword__lists:not(:has(.active)) .keyword__btn01::before {
+.event-keyword__lists:not(:has(.move)) .keyword__btn01::before {
     opacity: 1;
     visibility: visible;
     animation-name: keyword01;
@@ -849,6 +854,7 @@
     }
 }
 
+.event-keyword__btn.move::before,
 .event-keyword__btn.on::before {
     visibility: hidden !important;
     opacity: 0 !important;
@@ -910,4 +916,65 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 105px;
+}
+
+.keyword__btn01.move {
+    animation-name: btn01_move;
+    z-index: 2;
+}
+
+@keyframes btn01_move {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    100% {
+        top: 282px;
+        left: 624px;
+    }
+}
+
+.keyword__btn02.move {
+    animation-name: btn02_move;
+}
+
+@keyframes btn02_move {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    100% {
+        top: 150px;
+        left: 624px;
+    }
+}
+
+.keyword__btn03.move {
+    animation-name: btn03_move;
+}
+
+@keyframes btn03_move {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    100% {
+        top: 18px;
+        left: 624px;
+    }
+}
+
+.keyword__btn04.move {
+    animation-name: btn04_move;
+}
+
+@keyframes btn04_move {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    100% {
+        top: -114px;
+        left: 624px;
+    }
 }
