@@ -1042,3 +1042,188 @@
 .step__tit {
     padding-top: 120px;
 }
+
+.step-wrapper {
+    margin: 0 auto;
+    width: 1400px;
+    text-align: center;
+    padding-top: 125px;
+}
+
+.life-cycle__lists {
+    margin-top: 120px;
+    background-image: url(../images/component/step/life_road.png);
+    background-repeat: no-repeat;
+    height: 1020px;
+    background-size: contain;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 140px 0;
+}
+
+.life-cycle__list {
+    flex:  1 1 50%;
+    height: 130px;
+    position: relative;
+}
+
+.life-cycle__list:not(:first-child)::before {
+    content: '';
+    display: block;
+    background-image: url(../images/component/step/life-purpose.png);
+    width: 291px;
+    height: 147px;
+    position: absolute;
+    bottom: 60px;
+    transition: all .15s ease-in;
+}
+
+.life-cycle__list.step02::before {
+    left: 465px;
+}
+
+.life-cycle__list.active.step02::before {
+    background-image: url(../images/component/step/life-purpose-1.png);
+}
+
+.life-cycle__list.step03::before {
+    left: 715px;
+}
+.life-cycle__list.step04::before {
+    left: 230px;
+}
+.life-cycle__list.step05::before {
+    left: 400px;
+}
+.life-cycle__list.step06::before {
+    left: 685px;
+}
+
+.life-cycle__list:nth-child(3n) {
+    flex:  1 1 100%;
+}
+
+.life-cycle__item {
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.life-cycle__item.start {
+    background-image: url(../images/component/step/life_start.png);
+    width: 388px;
+    height: 202px;
+    top: -65px;
+}
+
+.life-cycle__item.start::before,
+.life-cycle__item.start::after {
+    content: '';
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    z-index: 1;
+}
+
+.life-cycle__item.start::before {
+    background-image: url(../images/component/step/life-deco-wood.png);
+    width: 170px;
+    height: 68px;
+    bottom: -5px;
+    left: -60px;
+}
+
+.life-cycle__item.start::after {
+    background-image: url(../images/component/step/life-deco-zoom.png);
+    width: 104px;
+    height: 136px;
+    right: 30px;
+    bottom: -40px;
+}
+
+.life-cycle__btn {
+    width: 203px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 70px;
+    cursor: pointer;
+    position: relative;
+    transition: all .15s ease-in;
+}
+
+.life-cycle__btn.on {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.life-cycle__btn::after {
+    content: '';
+    display: block;
+    background: url(../images/common/hand.png) no-repeat;
+    width: 73px;
+    height: 86px;
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    animation: 1s eventClick infinite linear forwards;
+    transition: all .15s ease-in;
+}
+
+.life-cycle__btn.start {
+    background-image: url(../images/component/step/btn_start.png);
+    position: absolute;
+    bottom: -90px;
+    left: 70px;
+}
+
+.life-cycle__deco {
+    background-size: contain;
+    transition: all .15s ease-in;
+    animation-iteration-count: 1;
+}
+
+.step01 .life-cycle__deco {
+    background-image: url(../images/component/step/life-ani-1.png);
+    width: 205px;
+    height: 203px;
+    bottom: 70px;
+    left: 330px;
+    opacity: 0;
+}
+
+.step01 .on + .life-cycle__deco {
+    animation-name: life-cycle-ani-1;
+}
+
+@keyframes life-cycle-ani-1 {
+    0% {
+        opacity: 1;
+        left: 330px;
+    }
+    100% {
+        left: 940px;
+    }
+}
+
+.on + .life-cycle__deco {
+    animation-duration: 2s;
+    opacity: 1;
+}
+.life-cycle__btns {
+    position: relative;
+    bottom: -68px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.active .life-cycle__btns {
+    opacity: 1;
+    visibility: visible;
+}
+
+.life-cycle-pop__btn {
+    border-radius: 88px;
+    cursor: pointer;
+}

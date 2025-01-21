@@ -252,14 +252,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const keywordBtns = document.querySelectorAll('.event-keyword__btn');
     const event01Popup = document.querySelector('.event01__popup');
     let currentIndex = 0;
-    const allOn = Array.from(keywordBtns).every(keywordBtn => keywordBtn.classList.contains('on'));
 
     keywordBtns.forEach((keywordBtn, index) => {
         keywordBtn.addEventListener('click', function () {
-            const isAllOn = typeof allOn === 'function' ? allOn() : allOn;
 
-            if (isAllOn) {
-                alert('모두 확인했습니다. 다음 영역으로 이동해주세요.');
+            if (keywordBtn.classList.contains('on')) {
+                alert('이미 확인했습니다.');
                 return;
             }
 
@@ -310,4 +308,17 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
     });
 
+    const lifeCycleBtns = document.querySelectorAll('.life-cycle__btn')
+    
+    lifeCycleBtns.forEach(lifeCycleBtn => {
+        lifeCycleBtn.addEventListener('click', function () {
+            this.classList.add('on');
+
+            let parent = this.parentElement;
+            let nextSibling = parent.nextElementSibling;
+            setTimeout(() => {
+                nextSibling.classList.add('active');
+            }, 2000)
+        })
+    })
 });
