@@ -61,4 +61,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
 
     dim.addEventListener('click', closePopup);
+
+
+    const tabBtns = document.querySelectorAll('.tab__btn');
+    const tabWrappers = document.querySelectorAll('.tab-wrapper');
+
+    tabBtns.forEach((tabBtn, index) => {
+        tabBtn.addEventListener('click', function() {
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+            tabWrappers.forEach(Wrapper => Wrapper.classList.remove('active'));
+            tabBtn.classList.add('active');
+
+            tabBtn.classList.add('active');
+            tabWrappers[index].classList.add('active');
+        });
+    });
 });
