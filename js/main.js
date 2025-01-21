@@ -308,17 +308,37 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
     });
 
-    const lifeCycleBtns = document.querySelectorAll('.life-cycle__btn')
+    const lifeCycleBtns = document.querySelectorAll('.life-cycle__btn');
+    const stepPopup = document.querySelector('.step__popup');
     
     lifeCycleBtns.forEach(lifeCycleBtn => {
         lifeCycleBtn.addEventListener('click', function () {
             this.classList.add('on');
-
+            
             let parent = this.parentElement;
             let nextSibling = parent.nextElementSibling;
             setTimeout(() => {
                 nextSibling.classList.add('active');
-            }, 2000)
+            }, 2000);
+            
         })
-    })
+
+        const lifeCyclePopBtns = document.querySelectorAll('.life-cycle-pop__btn');
+        const stepPopup = document.querySelector('.step__popup');
+
+        lifeCyclePopBtns.forEach((lifeCyclePopBtn, index) => {
+            lifeCyclePopBtn.addEventListener('click', function() {
+                
+                const tabBtns = document.querySelectorAll('.tab__btn');
+                const tabWrappers = document.querySelectorAll('.tab-wrapper');
+
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabWrappers.forEach(Wrapper => Wrapper.classList.remove('active'));                
+                tabBtns[index].classList.add('active');
+                tabWrappers[index].classList.add('active');
+
+                stepPopup.classList.add('active')
+            });
+        });
+    });
 });

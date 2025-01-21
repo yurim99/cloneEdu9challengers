@@ -1226,6 +1226,7 @@
 .life-cycle-pop__btn {
     border-radius: 88px;
     cursor: pointer;
+    border-radius: 90px;
 }
 
 .step__popup {
