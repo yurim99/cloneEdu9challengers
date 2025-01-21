@@ -14,6 +14,7 @@
 body {
     position: relative;
     transition: all .15s ease-in;
+    font-family: "pretendard", "Nanum Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
 }
 
 body:has(.dim.active) {
@@ -185,7 +186,7 @@ body:has(.dim.active) {
     text-align: center;
 }
 
-.popup__close {
+.popup__head > .popup__close {
     display: block;
     position: absolute;
     width: 40px;
@@ -195,8 +196,8 @@ body:has(.dim.active) {
     cursor: pointer;
 }
 
-.popup__close::before,
-.popup__close::after {
+.popup__head > .popup__close::before,
+.popup__head > .popup__close::after {
     content: '';
     display: block;
     width: 55px;
