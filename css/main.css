@@ -1367,7 +1367,7 @@
     padding-top: 20px;
 }
 
-.step__popup .popup__footer > .popup__close {
+.step__popup .popup__footer button {
     background-image: url(../images/component/step/popup__close.png);
     width: 270px;
     height: 60px;
@@ -1375,7 +1375,11 @@
     cursor: pointer;
 }
 
-.step__popup .popup__footer > .popup__close::after {
+.step__popup .popup__footer .popup__next {
+    background-image: url(../images/component/step/btn_next.png);
+}
+
+.step__popup .popup__footer > button::after {
     content: '';
     display: block;
     background: url(../images/common/hand.png) no-repeat;
@@ -1400,4 +1404,37 @@
     opacity: 1;
     visibility: visible;
     height: auto;
+}
+
+.life-cycle__tit {
+    display: none;
+}
+
+.active .life-cycle__tit {
+    display: block;
+    
+}
+
+.next__tit {
+    padding: 10px 0 20px;
+}
+.next__tit>p {
+    font-size: 36px;
+    text-align: center;
+}
+
+.next-wrapper {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    word-break: keep-all;
+    color: #222;
+    font-size: 24px;
+    line-height: 30px;
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }

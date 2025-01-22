@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", (event) => {
+    const dim = document.querySelector('.dim');
     const semicircleCtrlBtn = document.querySelector('.semicircle__ctrl-btn');
     const semicircleCtrlOn = document.querySelector('.semicircle-ctrl__on');
     let isReversed = false;
@@ -299,7 +300,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
                 const event01Popup = document.querySelector('.event01__popup');
                 event01Popup.classList.add('active');
 
-                const dim = document.querySelector('.dim');
                 dim.classList.add('active');
 
             }, 1000);
@@ -418,64 +418,140 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
         const lifeCyclePopBtns = document.querySelectorAll('.life-cycle-pop__btn');
         const stepPopup = document.querySelector('.step__popup');
-        const popTabBtnsStage = document.querySelector('.step__popup .tab-btns');
+        const popHeadStage = document.querySelector('.step__popup .popup__head');
+        const popBodyStage = document.querySelector('.step__popup .popup__body');
+        const popFooterStage = document.querySelector('.step__popup .popup__footer');
 
-        lifeCyclePopBtns.forEach((lifeCyclePopBtn) => {
+        lifeCyclePopBtns.forEach((lifeCyclePopBtn, index) => {
             lifeCyclePopBtn.addEventListener('click', function () {
                 const buttonId = this.dataset.id;
                 const foundItem = lifeData.find(item => item.id === buttonId);
-        
-                popTabBtnsStage.innerHTML = '';
-                stepPopTit.innerHTML = '';
-                stepPopCnt.innerHTML = '';
-        
-                Object.keys(foundItem.tabs).forEach((tabKey, idx) => {
-                    const tabData = foundItem.tabs[tabKey];
-        
-                    const tabBtn = document.createElement('button');
-                    tabBtn.type = 'button';
-                    tabBtn.className = 'tab__btn popup-tab__btn';
-                    tabBtn.textContent = tabData.btnTitle;
-                    popTabBtnsStage.appendChild(tabBtn);
-        
-                    if (idx === 0) {
-                        tabBtn.classList.add('active');
-                        tabData.title.forEach(tit => {
-                            const tabTit = document.createElement('p');
-                            tabTit.textContent = tit;
-                            stepPopTit.appendChild(tabTit);
+                let stepPopTit = document.getElementById('stepPopTit');
+                let stepPopCnt = document.getElementById('stepPopCnt');
+
+                if(stepPopTit && stepPopCnt) {
+                    
+                    //popHead
+                    popHeadStage.innerHTML = '';
+
+                    const popTabBtns = document.createElement('div');
+                    popTabBtns.className = 'tab-btns';
+                    popHeadStage.appendChild(popTabBtns);
+
+                    const tabStage = document.createElement('div');
+                    tabStage.className = 'tab-stage';
+                    popBodyStage.appendChild(tabStage);
+                    
+                    const tabWrapper = document.createElement('div');
+                    tabWrapper.className = 'tab-wrapper'
+                    tabStage.appendChild(tabWrapper);
+
+                    //popBody 
+                    popBodyStage.innerHTML = '';
+                    
+                    const stepPopTit = document.createElement('div');
+                    stepPopTit.id = 'stepPopTit';
+                    stepPopTit.className = 'step-pop__tit';
+                    tabWrapper.appendChild(stepPopTit);
+                    stepPopTit.innerHTML = '';
+
+                    const stepPopCnt = document.createElement('div');
+                    stepPopCnt.id = 'stepPopCnt';
+                    stepPopCnt.className = 'step-pop__cnt';                    
+                    tabWrapper.appendChild(stepPopCnt);
+                    stepPopCnt.innerHTML = '';
+            
+                    Object.keys(foundItem.tabs).forEach((tabKey, idx) => {
+                        const tabData = foundItem.tabs[tabKey];
+
+                        const tabBtn = document.createElement('button');
+                        tabBtn.type = 'button';
+                        tabBtn.className = 'tab__btn popup-tab__btn';
+                        tabBtn.textContent = tabData.btnTitle;
+                        popTabBtns.appendChild(tabBtn);
+            
+                        if (idx === index) {
+                            tabBtn.classList.add('active');
+                            tabData.title.forEach(tit => {
+                                const tabTit = document.createElement('p');
+                                tabTit.textContent = tit;
+                                stepPopTit.appendChild(tabTit);
+                            });
+                            tabData.cnt.forEach(txt => {
+                                const tabCnt = document.createElement('p');
+                                tabCnt.textContent = txt;
+                                stepPopCnt.appendChild(tabCnt);
+                            });
+                        }
+            
+                        tabBtn.addEventListener('click', () => {
+                            document.querySelectorAll('.popup-tab__btn').forEach(btn => btn.classList.remove('active'));
+                            tabBtn.classList.add('active');
+      
+                            stepPopTit.innerHTML = '';
+                            stepPopCnt.innerHTML = '';
+                            tabData.title.forEach(tit => {
+                                const tabTit = document.createElement('p');
+                                tabTit.textContent = tit;
+                                stepPopTit.appendChild(tabTit);
+                            });
+                            tabData.cnt.forEach(txt => {
+                                const tabCnt = document.createElement('p');
+                                tabCnt.textContent = txt;
+                                stepPopCnt.appendChild(tabCnt);
+                            });
                         });
-                        tabData.cnt.forEach(txt => {
-                            const tabCnt = document.createElement('p');
-                            tabCnt.textContent = txt;
-                            stepPopCnt.appendChild(tabCnt);
-                        });
-                    }
-        
-                    tabBtn.addEventListener('click', () => {
-                        document.querySelectorAll('.popup-tab__btn').forEach(btn => btn.classList.remove('active'));
-                        tabBtn.classList.add('active');
-        
-                        stepPopTit.innerHTML = '';
-                        stepPopCnt.innerHTML = '';
-                        tabData.title.forEach(tit => {
-                            const tabTit = document.createElement('p');
-                            tabTit.textContent = tit;
-                            stepPopTit.appendChild(tabTit);
-                        });
-                        tabData.cnt.forEach(txt => {
-                            const tabCnt = document.createElement('p');
-                            tabCnt.textContent = txt;
-                            stepPopCnt.appendChild(tabCnt);
-                        });
+    
+                        if (index === lifeCyclePopBtns.length - 1) {
+                            console.log('마지막 버튼 클릭!');
+    
+                            popFooterStage.innerHTML = '';
+                            const lastBtn = document.createElement('button');
+                            lastBtn.type = 'button';
+                            lastBtn.className = 'popup__last-btn';
+                            lastBtn.title = '확인'
+    
+                            popFooterStage.appendChild(lastBtn);
+                        }
+    
+                        const popupLastBtn = document.querySelector('.popup__last-btn');
+
+                        if(popupLastBtn) {
+                            popupLastBtn.addEventListener('click', function () {
+                                popHeadStage.innerHTML = '';
+                                const nextTit = document.createElement('p');
+                                nextTit.className = 'next__tit'
+                                nextTit.textContent = '다음단계 제목입니다'
+    
+                                popBodyStage.innerHTML = '';
+                                const nextWrapper = document.createElement('div');
+                                nextWrapper.className = 'next-wrapper'
+                                nextWrapper.innerHTML = '다음단계로 이동 하세요. 다음단계로 이동 하세요. 다음단계로 이동 하세요.'
+    
+                                popFooterStage.innerHTML = '';
+                                const nextBtn = document.createElement('button');
+                                nextBtn.type = 'button';
+                                nextBtn.className = 'popup__next';
+                                nextBtn.title = '다음단계로 →'
+    
+                                popHeadStage.appendChild(nextTit);
+                                popBodyStage.appendChild(nextWrapper);
+                                popFooterStage.appendChild(nextBtn);
+                            });
+                        }
                     });
-                });
+                }
         
                 stepPopup.classList.add('active');
             });
         });
-        
-        
+
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('popup__next')) {
+                dim.classList.remove('active');
+                stepPopup.classList.remove('active');
+            }
+        });
         
     });
 });
