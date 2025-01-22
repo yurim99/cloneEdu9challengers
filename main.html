@@ -426,11 +426,11 @@
                     </li>
                     <li class="life-cycle__list step02">
                         <div class="life-cycle__btns">
-                            <button id="lifeCyclePop01" class="popup__btn life-cycle-pop__btn" type="button">
+                            <button data-id="life01" class="popup__btn life-cycle-pop__btn" type="button">
                                 <img src="./images/component/step/step02-btn-1.png" alt="유보 통합">
                             </button>
-                            <button class="popup__btn life-cycle-pop__btn" type="button">
-                                <img id="lifeCyclePop02" src="./images/component/step/step02-btn-2.png" alt="늘봄">
+                            <button data-id="life01" class="popup__btn life-cycle-pop__btn" type="button">
+                                <img src="./images/component/step/step02-btn-2.png" alt="늘봄">
                             </button>
                         </div>
                     </li>
@@ -449,33 +449,25 @@
         <aside class="step__popup popup">
             <div class="popup__head">
                 <div class="tab-btns">
-                    <button class="tab__btn popup-tab__btn" type="button">유보통합</button>
-                    <button class="tab__btn popup-tab__btn" type="button">늘봄</button>
+                    <!-- <button id="life0101" class="tab__btn popup-tab__btn" type="button"></button> -->
                 </div>
                 <button type="button" class="popup__close" title="팝업 닫기"></button>
             </div>
             <div class="popup__body">
                 <div class="tab-stage">
                     <div class="tab-wrapper">
-                        <div class="step-pop__tit">
-                            <p>모든 영·유아(0세~5세)가 어디에서나</p>
+                        <div id="stepPopTit" class="step-pop__tit">
+                            <!-- <p>모든 영·유아(0세~5세)가 어디에서나</p>
                             <p>세계 최고 수준의 교육과 보육을 차별</p>
-                            <p>없이 받을 수 있도록 하겠습니다.</p>
+                            <p>없이 받을 수 있도록 하겠습니다.</p> -->
                         </div>
-                        <div class="step-pop__cnt">
-                            <p class="dot-txt">충분한 이용시간 보장</p>
-                            <p class="dot-txt">dddd</p>
-                        </div>
-                    </div>
-                    <div class="tab-wrapper">
-                        <div class="step-pop__tit">
-                            <p>dddd</p>
-                        </div>
-                        <div class="step-pop__cnt">
-                            <p class="dot-txt">충dfaf시간 보장</p>
-                            <p class="dot-txt">dddd</p>
+                        <div id="stepPopCnt" class="step-pop__cnt">
+                            <!-- <p class="dot-txt"></p> -->
                         </div>
                     </div>
+                </div>
+                <div class="next-stage">
+                    <p>모두 확인했습니다.</p>
                 </div>
             </div>
             <div class="popup__footer">

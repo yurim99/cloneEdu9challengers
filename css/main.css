@@ -1372,6 +1372,7 @@
     width: 270px;
     height: 60px;
     position: relative;
+    cursor: pointer;
 }
 
 .step__popup .popup__footer > .popup__close::after {
@@ -1386,4 +1387,17 @@
     animation: 1s eventClick infinite linear forwards;
     transition: all .15s ease-in;
     transform: initial;
+}
+
+.next-stage {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: all .15s ease-in;
+}
+
+.next-stage.active {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
 }

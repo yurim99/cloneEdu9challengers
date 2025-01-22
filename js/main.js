@@ -279,7 +279,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                     joinButton.className = 'popup__close btn join';
                     joinButton.title = '이벤트 참여하기';
 
-                    joinButton.addEventListener('click', function() {
+                    joinButton.addEventListener('click', function () {
                         alert('이벤트가 끝났습니다. 상단에 X버튼을 클릭해주세요.');
                         return;
                     })
@@ -310,35 +310,172 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     const lifeCycleBtns = document.querySelectorAll('.life-cycle__btn');
     const stepPopup = document.querySelector('.step__popup');
-    
+
     lifeCycleBtns.forEach(lifeCycleBtn => {
         lifeCycleBtn.addEventListener('click', function () {
             this.classList.add('on');
-            
+
             let parent = this.parentElement;
             let nextSibling = parent.nextElementSibling;
             setTimeout(() => {
                 nextSibling.classList.add('active');
             }, 2000);
-            
+
         })
+
+        lifeData = [
+            {
+                id: 'life01',
+                tabs: {
+                    tab01: {
+                        btnTitle: '유보통합',
+                        title: [
+                            '모든 영·유아(0세~5세)가 어디에서나',
+                            '세계 최고 수준의 교육과 보육을 차별',
+                            '없이 받을 수 있도록 하겠습니다.',
+                        ],
+                        cnt: [
+                            '충분한 이용시간(8h+4h) 보장',
+                            '교사 대 영유아 비율 개선',
+                            '단계적 무상 교육·보육',
+                            '0~5세 영유아 교육과정',
+                            '영·유아학교 시범사업(가칭)',
+                        ]
+                    },
+                    tab02: {
+                        btnTitle: '늘봄',
+                        title: [
+                            '희망하는 모든 초등학생에게 사교육이 필요',
+                            '없도록 정규 수업외에 학교와 지역사회의',
+                            '다양한 교육자원을 연계한 종합 교육 돌봄',
+                            '프로그램을 적극적으로 제공하겠습니다.',
+                        ],
+                        cnt: [
+                            '2024년 2학기 모든 초등학교 도입',
+                            '2026년까지 연차별 확대(모든 학년 이용)',
+                            '대학 연계 프로그램 등 늘봄허브 구축',
+                        ],
+                        nextTitle: '영·유아/초등',
+                        next: [
+                            '"영·유아 시기에는 유보통합을 통해 유치원과 어린이집 어디를 가도 걱정없이 아이에게 필요한 미래역량을 키워주는 질 높은 교육을 받을 수 있고, 초등 저학년 시기에 돌봄을 희망하는 누구나, 국가가 제공하는 다양한 늘봄 프로그램으로 통해서 안전하게 아이 돌봄을 받을 수 있습니다.'
+                        ]
+                    },
+                }
+            },
+            {
+                id: 'life02',
+                tabs:{
+                    tab01: {
+                        btnTitle: '함께학교',
+                        title: [
+                            '학생의 건강한 성장과 발달을 체계적으로',
+                            '지원하여, 학교 교사의 교육 활동을 보호,',
+                            '학생·교사·학부모가 소통하고 존중하는',
+                            '학교를 만들겠습니다',
+                        ],
+                        cnt: [
+                            '학생 건강·안전',
+                            '학교폭력 근절',
+                            '학생맞춤 통합지원',
+                            '특수교육 여건 개선',
+                            '교원의 교육활동 보호',
+                        ]
+                    },
+                    tab02: {
+                        btnTitle: '교실혁명',
+                        title: [
+                            '모든 학생들이 수업을 통해 새로운',
+                            '시대에 필요한 역량을 키우도록',
+                            '교사가 이끄는 교실 수업의 혁명적',
+                            '변화를 적극적으로 지원하겠습니다.',
+                        ],
+                        cnt: [
+                            '교사 연수',
+                            'AI 디지털교과서',
+                            '수업·평가 혁신',
+                            '고교학점제',
+                        ]
+                    },
+                    tab03: {
+                        btnTitle: '입시개혁',
+                        title: [
+                            '누구에게나 공정한 입시제도를 위하여',
+                            '사교육 카르텔과 입시비리를 근절하며,',
+                            '학생의 미래 역량을 키우는 입시 제도가',
+                            '충분한 사회적 논의와 준비를 거쳐서',
+                            '현장에 뿌리내리도록 하겠습니다.'
+                        ],
+                        cnt: [
+                            '킬러문항 제거',
+                            '사교육 카르텔 혁파',
+                            '2028년 대입 안착',
+                            '사교육 경감',
+                        ]
+                    },
+                }
+            },
+        ]
 
         const lifeCyclePopBtns = document.querySelectorAll('.life-cycle-pop__btn');
         const stepPopup = document.querySelector('.step__popup');
+        const popTabBtnsStage = document.querySelector('.step__popup .tab-btns');
 
-        lifeCyclePopBtns.forEach((lifeCyclePopBtn, index) => {
-            lifeCyclePopBtn.addEventListener('click', function() {
-                
-                const tabBtns = document.querySelectorAll('.tab__btn');
-                const tabWrappers = document.querySelectorAll('.tab-wrapper');
-
-                tabBtns.forEach(btn => btn.classList.remove('active'));
-                tabWrappers.forEach(Wrapper => Wrapper.classList.remove('active'));                
-                tabBtns[index].classList.add('active');
-                tabWrappers[index].classList.add('active');
-
-                stepPopup.classList.add('active')
+        lifeCyclePopBtns.forEach((lifeCyclePopBtn) => {
+            lifeCyclePopBtn.addEventListener('click', function () {
+                const buttonId = this.dataset.id;
+                const foundItem = lifeData.find(item => item.id === buttonId);
+        
+                popTabBtnsStage.innerHTML = '';
+                stepPopTit.innerHTML = '';
+                stepPopCnt.innerHTML = '';
+        
+                Object.keys(foundItem.tabs).forEach((tabKey, idx) => {
+                    const tabData = foundItem.tabs[tabKey];
+        
+                    const tabBtn = document.createElement('button');
+                    tabBtn.type = 'button';
+                    tabBtn.className = 'tab__btn popup-tab__btn';
+                    tabBtn.textContent = tabData.btnTitle;
+                    popTabBtnsStage.appendChild(tabBtn);
+        
+                    if (idx === 0) {
+                        tabBtn.classList.add('active');
+                        tabData.title.forEach(tit => {
+                            const tabTit = document.createElement('p');
+                            tabTit.textContent = tit;
+                            stepPopTit.appendChild(tabTit);
+                        });
+                        tabData.cnt.forEach(txt => {
+                            const tabCnt = document.createElement('p');
+                            tabCnt.textContent = txt;
+                            stepPopCnt.appendChild(tabCnt);
+                        });
+                    }
+        
+                    tabBtn.addEventListener('click', () => {
+                        document.querySelectorAll('.popup-tab__btn').forEach(btn => btn.classList.remove('active'));
+                        tabBtn.classList.add('active');
+        
+                        stepPopTit.innerHTML = '';
+                        stepPopCnt.innerHTML = '';
+                        tabData.title.forEach(tit => {
+                            const tabTit = document.createElement('p');
+                            tabTit.textContent = tit;
+                            stepPopTit.appendChild(tabTit);
+                        });
+                        tabData.cnt.forEach(txt => {
+                            const tabCnt = document.createElement('p');
+                            tabCnt.textContent = txt;
+                            stepPopCnt.appendChild(tabCnt);
+                        });
+                    });
+                });
+        
+                stepPopup.classList.add('active');
             });
         });
+        
+        
+        
     });
 });

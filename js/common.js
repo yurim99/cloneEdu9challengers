@@ -64,7 +64,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 
     const tabBtns = document.querySelectorAll('.tab__btn');
-    const tabWrappers = document.querySelectorAll('.tab-wrapper');
+    const tabWrappers = document.querySelectorAll('.tab-wrapper');  
 
     tabBtns.forEach((tabBtn, index) => {
         tabBtn.addEventListener('click', function() {
@@ -74,6 +74,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
             tabBtn.classList.add('active');
             tabWrappers[index].classList.add('active');
+            
         });
     });
 });
