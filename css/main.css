@@ -1112,6 +1112,10 @@
     left: 685px;
 }
 
+.life-cycle__list.active.step06::before {
+    background-image: url(../images/component/step/life-purpose-5.png);
+}
+
 .life-cycle__list:nth-child(3n) {
     flex:  1 1 100%;
 }
@@ -1226,7 +1230,7 @@
 }
 
 .on + .life-cycle__deco {
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     opacity: 1;
 }
 
@@ -1258,7 +1262,7 @@
         bottom: 50px;
     }
     100% {
-        bottom: 50px;
+        bottom: 55px;
         right: 690px;
     }
 }
