@@ -411,6 +411,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const lifeCycleBtns = document.querySelectorAll('.life-cycle__btn');
     const stepPopup = document.querySelector('.step__popup');
 
+    function nextMove() {
+        const lifeCycleLists = document.querySelectorAll('.life-cycle__list.active');
+        if (lifeCycleLists.length > 0) {
+            let lastList = lifeCycleLists[lifeCycleLists.length - 1];
+            let next = lastList.nextElementSibling;
+            if (next) {
+                next.classList.add('move');
+                setTimeout(() => {
+                    next.classList.add('active');
+                }, 2000);
+            }
+        }
+    }
     lifeCycleBtns.forEach(lifeCycleBtn => {
         lifeCycleBtn.addEventListener('click', function () {
             this.classList.add('on');
@@ -537,7 +550,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
     });
 
-    let hasMoved = false;  // nextMove가 한 번만 실행되도록 하는 변수
+    let hasMoved = false;
 
     document.addEventListener('click', function (event) {
         if (event.target.classList.contains('popup__next')) {
@@ -549,18 +562,5 @@ window.addEventListener("DOMContentLoaded", (event) => {
             }
         }
     });
-
-    function nextMove() {
-        const lifeCycleLists = document.querySelectorAll('.life-cycle__list.active');
-        if (lifeCycleLists.length > 0) {
-            let lastList = lifeCycleLists[lifeCycleLists.length - 1];
-            let next = lastList.nextElementSibling;
-            if (next) {
-                setTimeout(() => {
-                    next.classList.add('active');
-                }, 2000);
-            }
-        }
-    }
 
 });
