@@ -1182,6 +1182,7 @@
     background-size: contain;
     transition: all .15s ease-in;
     animation-iteration-count: 1;
+    opacity: 0;
 }
 
 .step01 .life-cycle__deco {
@@ -1190,12 +1191,12 @@
     height: 203px;
     bottom: 70px;
     left: 330px;
-    opacity: 0;
 }
 
 .step01 .on + .life-cycle__deco {
     animation-name: life-cycle-ani-1;
 }
+
 
 @keyframes life-cycle-ani-1 {
     0% {
@@ -1211,6 +1212,17 @@
     animation-duration: 2s;
     opacity: 1;
 }
+.step03 .life-cycle__deco {
+    background-image: url(../images/component/step/life-ani-2.png);
+    width: 275px;
+    height: 252px;
+    bottom: 70px;
+    left: 330px;
+}
+ .step03.active .life-cycle__deco {
+    opacity: 1;
+}
+
 .life-cycle__btns {
     position: relative;
     bottom: -68px;
@@ -1240,6 +1252,11 @@
     box-sizing: border-box;
     background-color: var(--color-blue);
     border-radius: 30px 30px 0 0;
+}
+
+.step__popup .popup-head-wrapper {
+    width: 100%;
+    height: 60px;
 }
 
 .step__popup .popup__head > .popup__close {
@@ -1416,22 +1433,22 @@
 }
 
 .next__tit {
-    padding: 10px 0 20px;
-}
-.next__tit>p {
+    padding-bottom :0 20px;
     font-size: 36px;
+    font-weight: 700;
     text-align: center;
+    color: #fff;
 }
 
 .next-wrapper {
     background-color: #fff;
     border-radius: 20px;
-    padding: 10px;
+    padding: 10px 15px;
     box-sizing: border-box;
     word-break: keep-all;
     color: #222;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 22px;
+    line-height: 34px;
     height: 360px;
     display: flex;
     align-items: center;

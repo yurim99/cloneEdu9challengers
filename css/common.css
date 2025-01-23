@@ -15,6 +15,7 @@ body {
     position: relative;
     transition: all .15s ease-in;
     font-family: "pretendard", "Nanum Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    transition: all .15s ease-in;
 }
 
 body:has(.dim.active) {
