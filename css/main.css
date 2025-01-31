@@ -1260,6 +1260,7 @@
         bottom: 300px;
     }
     25% {
+        
         right: -100px;
         bottom: 50px;
     }
@@ -1268,9 +1269,11 @@
         right: 690px;
     }
 }
-
+.step04  .life-cycle__btns {
+    left: -255px;
+}
 .step04 .life-cycle__deco {
-    background-image: url(../images/component/step/life-ani-3.png);
+    background-image: url(../images/component/step/life-ani-2.png);
     width: 340px;
     height: 254px;
     bottom: 340px;
@@ -1287,14 +1290,69 @@
         left: 95px;
     }
     50% {
+        background-image: url(../images/component/step/life-ani-3.png);
         bottom: 200px;
         left: -195px;
     }
     100% {
+        background-image: url(../images/component/step/life-ani-3.png);
         bottom: 70px;
         left: -95px;
     }
 }
+
+.step05 .life-cycle__deco {
+    background-image: url(../images/component/step/life-ani-4.png);
+    width: 340px;
+    height: 242px;
+    bottom: 70px;
+    left: -470px;
+}
+
+.step05.move .life-cycle__deco {
+    animation-name: life-cycle-ani-4;
+}
+
+@keyframes life-cycle-ani-4 {
+    0% {
+        left: -470px;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        left: 50px;
+    }
+}
+
+.step06 .life-cycle__deco {
+    background-image: url(../images/component/step/life-ani-5.png);
+    width: 348px;
+    height: 324px;
+    bottom: 300px;
+    right: 0;
+}
+
+.step06.move .life-cycle__deco {
+    animation-name: life-cycle-ani-5;
+}
+
+@keyframes life-cycle-ani-5 {
+    0% {
+        bottom: 300px;
+        right: 0;
+    }
+    30% {
+        bottom: 50px;
+        right: 0;
+    }
+    100% {
+        bottom: 50px;
+        right: 700px;
+    }
+}
+
 .life-cycle__btns {
     position: relative;
     bottom: -68px;
@@ -1394,8 +1452,8 @@
 
 .step-pop__tit {
     background-color: #fff6ca;
-    height: 130px;
-    padding: 10px;
+    min-height: 130px;
+    padding: 20px 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
