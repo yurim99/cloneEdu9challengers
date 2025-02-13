@@ -287,8 +287,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                     joinButton.title = '이벤트 참여하기';
 
                     joinButton.addEventListener('click', function () {
-                        alert('이벤트가 끝났습니다. 상단에 X버튼을 클릭해주세요.');
-                        return;
+                       eventCloseTxt()
                     })
                     event01PopupFooter.appendChild(joinButton);
                 }
@@ -422,7 +421,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                     ],
                     cnt : [
                         {
-                            src: './images/component/step/life03-img.png'
+                            src: './images/component/step/life03-img.png',
                         }
                     ]
                 },
@@ -565,12 +564,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
                         tabTit.textContent = tit;
                         stepPopTit.appendChild(tabTit);
                     });
-                    tabData.cnt.forEach(txt => {
-                        const tabCnt = createElement('p');
-                        tabCnt.textContent = txt;
-                        stepPopCnt.appendChild(tabCnt);
-                        if(tabCnt.src) {
-                            
+                    tabData.cnt.forEach(item => {
+                        if (typeof item === 'object' && item.src) {
+                            const img = document.createElement('img');
+                            img.src = item.src;
+                            img.alt = item.alt;
+                            stepPopCnt.appendChild(img);
+                        } else if (typeof item === 'string') {
+                            const tabCnt = document.createElement('p');
+                            tabCnt.textContent = item;
+                            stepPopCnt.appendChild(tabCnt);
                         }
                     });
                 };
