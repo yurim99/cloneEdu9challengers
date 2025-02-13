@@ -981,6 +981,7 @@
 .event01__popup .popup__footer {
     height: 70px;
     margin-top: 20px;
+    text-align: center;
 }
 
 .event01__popup .popup__footer .popup__close {
@@ -995,8 +996,7 @@
     top: 0;
     border-radius: 70px;
 }
-
-.event01__popup .popup__footer .popup__close.join {
+.popup__footer .popup__close.join {
     background-image: url(../images/component/event/event01-popup__join.png);
     width: 317px;
 }
@@ -1515,11 +1515,17 @@
 }
 
 .step__popup .popup__footer button {
+    background-repeat: no-repeat;
     background-image: url(../images/component/step/popup__close.png);
+    background-size: contain;
     width: 270px;
     height: 60px;
     position: relative;
     cursor: pointer;
+}
+
+.step__popup .popup__footer button.join {
+    background-image: url(../images/component/event/event01-popup__join.png);
 }
 
 .step__popup .popup__footer .popup__next {
@@ -1562,7 +1568,7 @@
 }
 
 .next__tit {
-    padding-bottom :0 20px;
+    padding-bottom: 20px;
     font-size: 36px;
     font-weight: 700;
     text-align: center;

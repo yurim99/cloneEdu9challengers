@@ -421,7 +421,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
                         '통하여 집중 지원하겠습니다.',
                     ],
                     cnt : [
-                        ''
+                        {
+                            src: './images/component/step/life03-img.png'
+                        }
                     ]
                 },
                 tab02 : {
@@ -466,7 +468,29 @@ window.addEventListener("DOMContentLoaded", (event) => {
                 }
             }
         },
+        {
+            id: 'eventLast',
+            topTit: '교육부 대전환',
+            bodyTit: [
+                '데이터 기반의 교육정책을 추진하고',
+                '교육청·지자체·대학·타부처 등과',
+                '수평적 파트너십을 형성함으로써,',
+                '글로벌 교육 선도국의 리더십을',
+                '발휘하는 교육부로 거듭나겠습니다.',
+            ],
+            cnt : [
+                '교육데이터 플랫폼 구축',
+                '교육부 조직개혁',
+                '한국어교육 강화',
+            ],
+            
+        },
     ]
+
+    function eventCloseTxt() {
+        alert('이벤트가 끝났습니다. 상단에 X버튼을 클릭해주세요.');
+        return;
+    }
 
     const lifeCycleBtns = document.querySelectorAll('.life-cycle__btn');
     const stepPopup = document.querySelector('.step__popup');
@@ -491,6 +515,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
     }
 
+    const nextTit = createElement('p', 'next__tit');
+    const tabStage = createElement('div', 'tab-stage');
+    const stepPopTit = createElement('div', 'step-pop__tit', 'stepPopTit');
+    const stepPopCnt = createElement('div', 'step-pop__cnt', 'stepPopCnt');
+
     lifeCycleBtns.forEach(lifeCycleBtn => {
         lifeCycleBtn.addEventListener('click', function () {
             this.classList.add('on');
@@ -513,10 +542,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                 const popTabBtns = createElement('div', 'tab-btns');
                 popHeadStage.appendChild(popTabBtns);
         
-                const tabStage = createElement('div', 'tab-stage');
                 const tabWrapper = createElement('div', 'tab-wrapper');
-                const stepPopTit = createElement('div', 'step-pop__tit', 'stepPopTit');
-                const stepPopCnt = createElement('div', 'step-pop__cnt', 'stepPopCnt');
                 tabWrapper.appendChild(stepPopTit);
                 tabWrapper.appendChild(stepPopCnt);
                 tabStage.appendChild(tabWrapper);
@@ -543,6 +569,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
                         const tabCnt = createElement('p');
                         tabCnt.textContent = txt;
                         stepPopCnt.appendChild(tabCnt);
+                        if(tabCnt.src) {
+                            
+                        }
                     });
                 };
         
@@ -581,7 +610,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         
                     lastBtn.addEventListener('click', function () {
                         popHeadStage.innerHTML = '';
-                        const nextTit = createElement('p', 'next__tit');
+                        
                         nextTit.textContent = lastTabData.nextTitle;
         
                         popBodyStage.innerHTML = '';
@@ -606,8 +635,52 @@ window.addEventListener("DOMContentLoaded", (event) => {
             });
         });
         
-        
     });
+
+    const lastLifeCycle = document.querySelector('.life-cycle__list.step06.life__last');
+    const checkLast = new MutationObserver(() => {
+        if(lastLifeCycle.classList.contains('active')) {
+            console.log('이벤트 끝');
+            
+            const targetId = 'eventLast';
+            const lastId = lifeData.find(item => item.id === targetId);
+            const joinBtn = createElement('button', 'join');
+            setTimeout(() => {
+                dim.classList.add('active');
+                stepPopup.classList.add('active');
+                
+                nextTit.innerHTML = lastId.topTit;
+                
+                popBodyStage.innerHTML = '';
+                popBodyStage.appendChild(tabStage);
+                stepPopTit.innerHTML = '';
+                stepPopCnt.innerHTML = '';
+                lastId.bodyTit.forEach(tit => {
+                    const tabTit = createElement('p');
+                    tabTit.textContent = tit;
+                    stepPopTit.appendChild(tabTit);
+                });
+                lastId.cnt.forEach(txt => {
+                    const tabCnt = createElement('p');
+                    tabCnt.textContent = txt;
+                    stepPopCnt.appendChild(tabCnt);
+                });
+                popFooterStage.innerHTML = '';
+               
+                joinBtn.type = 'button';
+                joinBtn.title = '이벤트 참여하기';
+                popFooterStage.appendChild(joinBtn);
+                  
+            }, 1000);
+
+            joinBtn.addEventListener('click', function () {
+               eventCloseTxt()
+            })
+        }
+    })
+
+    checkLast.observe(lastLifeCycle, { attributes: true, attributeFilter: ['class'] });
+
 
     document.addEventListener('click', function (event) {
         if (event.target.classList.contains('popup__next')) {
