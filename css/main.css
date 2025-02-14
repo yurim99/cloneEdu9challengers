@@ -1613,3 +1613,68 @@
     right: 10px;
     transform:  rotate(180deg);
 }
+
+/* 카톡 플친 영역 */
+.plus-stage {
+    background-image: url(../images/component/bg_friend.png);
+    height: 873px;
+    position: relative;
+}
+
+.plus__link {
+    background-color: transparent;
+    position: absolute;
+    width: 525px;
+    height: 105px;
+    bottom: 162px;
+    right: 430px;
+    border-radius: 53px;
+}
+
+/* sns 영역 */
+.sns-stage {
+    background-color: #444;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    flex-direction: column;
+}
+
+.sns__list {
+    background-image: url(../images/component/share_icon.png);
+    width: 738px;
+    height: 98px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sns__list>a {
+    display: block;
+    width: 98px;
+    height: 98px;
+    border-radius: 30px;
+}
+
+/* 참여자 */
+.visitor-stage {
+    height: 165px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visitor__tit {
+    font-size: 30px;
+    font-weight: 600;
+    color: #222218;
+}
+
+.visitor__tit>em {
+    font-style: normal;
+    color: #ff9102;
+    font-size: 46px;
+    font-weight: 900;
+}
