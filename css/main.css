@@ -1001,27 +1001,31 @@
     width: 317px;
 }
 
+
 .event01__popup .popup__footer .popup__close::before {
+    top: 20px;
+    left: initial;
+    right: 0;
+    transition: all .15s ease-in;
+    transform: initial;
+}
+
+.click__ani::after {
     content: '';
     display: block;
     background-image: url(../images/common/hand.png);
     width: 73px;
     height: 86px;
-    top: 20px;
-    left: initial;
-    right: 0;
     position: absolute;
-    animation: 1s eventClick infinite linear forwards;
+    animation: 1s zoomClick infinite linear forwards;
     background-color: transparent;
-    transition: all .15s ease-in;
-    transform: initial;
 }
 
 .event01__popup .popup__footer .popup__close::after {
     display: none;
 }
 
-@keyframes eventClick {
+@keyframes zoomClick {
     0% {
         scale: 1;
     }
@@ -1176,16 +1180,9 @@
 }
 
 .life-cycle__btn::after {
-    content: '';
-    display: block;
-    background: url(../images/common/hand.png) no-repeat;
-    width: 73px;
-    height: 86px;
-    position: absolute;
     top: 20px;
+    content: '';
     right: -20px;
-    animation: 1s eventClick infinite linear forwards;
-    transition: all .15s ease-in;
 }
 
 .life-cycle__btn.start {
@@ -1629,6 +1626,12 @@
     bottom: 162px;
     right: 430px;
     border-radius: 53px;
+}
+
+.plus__link::after {
+    right: -30px;
+    top: 50px;
+    z-index: 5;
 }
 
 /* sns 영역 */

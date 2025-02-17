@@ -317,3 +317,125 @@ body:has(.dim.active) {
 .footer__right p {
     text-align: right;
 }
+
+/* 네비게이션 */
+.navi-stage {
+    position: fixed;
+    background-color: #1b1c24cc;
+    bottom: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+.navi-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1380px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+    height: 90px;
+}
+
+.navi-container>.btn {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.all-menu__btn {
+    width: 70px;
+    height: 36px;
+    background-image: url(../images/common/allmenu.png);
+    cursor: pointer;
+}
+
+.all-menu-stage {
+    position: absolute;
+    width: 500px;
+    background-color: #263E99;
+    left: 0;
+    padding: 15px 30px 0;
+    box-sizing: border-box;
+    transition: all .2s ease-in;
+    opacity: 0;
+    visibility: hidden;
+    bottom: -100%;
+}
+
+.all-menu-stage.active {
+    opacity: 1;
+    visibility: visible;
+    bottom: 0;
+}
+
+.all-menu__close {
+    background-color: #999;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.all-menu__close::before,
+.all-menu__close::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    width: 5px;
+    height: 30px;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+}
+
+.all-menu__close::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.all-menu__close::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.all-menu__list {
+    margin-top: 45px;
+}
+
+.all-menu__link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 20px;
+    font-size: 22px;
+    line-height: 32px;
+    height: 112px;
+    box-sizing: border-box;
+}
+
+.all-menu__link + .all-menu__link {
+    border-top: 2px solid #fff;
+}
+
+.event__btn {
+    width: 570px;
+    height: 73px;
+    border-radius: 37px;
+}
+
+.event__btn.event01 {
+    background-image: url(../images/common/nav01_result.png);
+}
+.event__btn.event02 {
+    background-image: url(../images/common/nav02_result.png);
+}
+
+.top__btn {
+    background-image: url(../images/common/top.png);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}

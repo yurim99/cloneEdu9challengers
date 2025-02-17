@@ -77,4 +77,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
             
     //     });
     // });
+
+    const allMenuBtn = document.querySelector('.all-menu__btn');
+    const closeAllMenuBtn = document.querySelector('.all-menu__close');
+    const allMenuStage = document.querySelector('.all-menu-stage');
+    allMenuBtn.addEventListener('click', function() {
+        allMenuStage.classList.add('active')
+    });
+    closeAllMenuBtn.addEventListener('click', function() {
+        allMenuStage.classList.remove('active')
+    });
 });
