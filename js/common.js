@@ -78,6 +78,21 @@ window.addEventListener("DOMContentLoaded", (event) => {
     //     });
     // });
 
+
+    const naviStage = document.querySelector('.navi-stage');
+    const naviStageActive = document.querySelector('.navi-stage.active ');
+    window.addEventListener ('scroll', function() {
+        let currentScroll = window.scrollY;
+        
+        if(currentScroll>0) {
+            naviStage.classList.add('active');
+            allMenuStage.classList.remove('active');
+        } else {
+            naviStage.classList.remove('active')
+        }
+
+    })
+
     const allMenuBtn = document.querySelector('.all-menu__btn');
     const closeAllMenuBtn = document.querySelector('.all-menu__close');
     const allMenuStage = document.querySelector('.all-menu-stage');

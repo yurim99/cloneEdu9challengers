@@ -48,6 +48,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
 
     const cardNewsSwriper = new Swiper('.card-news__swriper', {
+        initialSlide: 0,
         navigation: {
             prevEl: '.popup-swiper___btn.prev',
             nextEl: '.popup-swiper___btn.next',
