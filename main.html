@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div id="wrap" class="container">
         <div class="dim"></div>
         <!-- st header -->
         <header class="header-stage stage">
@@ -36,11 +36,11 @@
                     <div class="all-menu-stage">
                         <button class="all-menu__close" title="전체메뉴 닫기"></button>
                         <div class="all-menu__list">
-                            <a class="all-menu__link" href="">카드뉴스로 보는<br>교육개혁 9대과제</a>
-                            <a class="all-menu__link" href="">동영상으로 보는<br>교육개혁 9대과제</a>
-                            <a class="all-menu__link" href="">Daum 검색으로 보는<br>교육개혁 9대과제</a>
-                            <a class="all-menu__link" href="">교육부와 카톡 친구해요</a>
-                            <a class="all-menu__link" href="">SNS 캠페인공유하기</a>
+                            <a id="linkCardNew" class="all-menu__link" href="">카드뉴스로 보는<br>교육개혁 9대과제</a>
+                            <a id="linkVideo" class="all-menu__link" href="">동영상으로 보는<br>교육개혁 9대과제</a>
+                            <a id="linkDaum" class="all-menu__link" href="">Daum 검색으로 보는<br>교육개혁 9대과제</a>
+                            <a id="linkPlus" class="all-menu__link" href="">교육부와 카톡 친구해요</a>
+                            <a id="linkShare" class="all-menu__link" href="">SNS 캠페인공유하기</a>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                     <button class="btn event__btn event01"></button>
                     <button class="btn event__btn event02"></button>
                 </div>
-                <button class="btn top__btn"></button>
+                <button id="linkTop" class="btn top__btn"></button>
             </div>
          </nav>
         <!-- ed nav -->
@@ -166,7 +166,7 @@
         <!-- ed -->
 
         <!-- st 카드뉴스 -->
-        <section class="card-news-stage stage">
+        <section id="cardNewsStage" class="card-news-stage stage">
             <div class="card-news__tit stage__tit">
                 <img src="./images/component/cardNews/cardnews_tit.png" alt="">
                 <p class="sr-only"><strong>카드뉴스</strong>로 보는 <strong>'교육개혁 9대 과제'</strong></p>
@@ -238,7 +238,7 @@
         <!-- ed 팝업 - 카드뉴스 -->
 
         <!--st 동영상 -->
-        <section class="youtube-stage stage">
+        <section id="videoStage" class="youtube-stage stage">
             <div class="youtube-wrapper">
                 <div class="youtube__tit stage__tit">
                     <img src="./images/component/youtube/youtube_title.png" alt="">
@@ -541,7 +541,7 @@
         <!-- ed 이벤트2 팝업 -->
 
         <!-- st 키워드 -->
-        <div class="keyword-stage stage">
+        <div id="daumStage" class="keyword-stage stage">
             <p class="sr-only">포털 사이트 Daum에 아래 <strong>키워드를 입력</strong>하시면 <strong>캠페인을 언제든</strong> 만나실 수 있습니다.</p>
             <p class="typing__txt">교육개혁 9대과제</p>
             <p class="sr-only">교육부 교육개혁 9대과제, 교육개혁9대과제 캠페인, 교육부</p>
@@ -550,7 +550,7 @@
         <!-- ed 키워드 -->
 
         <!-- st 플친 -->
-        <section class="plus-stage stag">
+        <section id="plusStage" class="plus-stage stag">
            <p class="sr-only"><strong>교육부</strong>와 <strong>카톡 친구</strong>해요!</p>
            <p class="sr-only">교육부의 <strong>다양한 정보</strong>를 <strong>빠르게😉 받고 싶다면?</strong></p>
            <p class="sr-only">교육부 <strong>카톡 채널 친구</strong>를 <strong>추가</strong>해주세요.😎</p>
@@ -559,7 +559,7 @@
         <!-- ed 플친 -->
 
         <!-- st sns -->
-        <section class="sns-stage stag">
+        <section id="shareStage" class="sns-stage stag">
             <img class="sns__tit" src="./images/component/sns__tit.png" alt="">
             <p class="sr-only"><strong>'교육개혁 9대 과제'</strong> 공익캠페인을 많이 공유해주세요.</p>
             <div class="sns__list">
