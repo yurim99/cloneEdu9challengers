@@ -1678,3 +1678,35 @@
     font-size: 46px;
     font-weight: 900;
 }
+
+/* 키워드 영역 */
+.keyword-stage {
+    background-image: url(../images/component/bg_keyword.png);
+    height: 350px;
+}
+
+.typing__txt {
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 700;
+    color: #313131;
+    border-right: 2px solid #333;
+    position: absolute;
+    top: 170px;
+    left: 580px;
+    animation: typing 5s infinite steps(20) ;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 300px;
+    }
+    100% {
+        width: 0;
+    }
+}
