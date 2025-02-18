@@ -1654,11 +1654,12 @@
     justify-content: space-between;
 }
 
-.sns__list>a {
+.sns__link {
     display: block;
     width: 98px;
     height: 98px;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 /* 참여자 */

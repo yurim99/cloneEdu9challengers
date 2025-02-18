@@ -288,7 +288,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                     joinButton.title = '이벤트 참여하기';
 
                     joinButton.addEventListener('click', function () {
-                       eventCloseTxt()
+                        eventCloseTxt()
                     })
                     event01PopupFooter.appendChild(joinButton);
                 }
@@ -404,8 +404,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
                         '사교육 경감',
                     ],
                     nextTitle: '초·중·고등',
-                    nextCnt: 
-                    '교육의 세 주체가 소통하고 존중하는 학교에서, 학생은 AI 디지털 교과서로 개개인의 수준과 학습속도에 맞춘 맞춤형 수업을 제공 받을 수 있고, 고교학점제를 통해 자신의 적성과 진로에 맞는 수업을 스스로 선택! 이로써 학생들은 미래역량을 키우고, 자신의 진로를 체계적으로 준비할 수 있게 될 것입니다.'
+                    nextCnt:
+                        '교육의 세 주체가 소통하고 존중하는 학교에서, 학생은 AI 디지털 교과서로 개개인의 수준과 학습속도에 맞춘 맞춤형 수업을 제공 받을 수 있고, 고교학점제를 통해 자신의 적성과 진로에 맞는 수업을 스스로 선택! 이로써 학생들은 미래역량을 키우고, 자신의 진로를 체계적으로 준비할 수 있게 될 것입니다.'
                 },
             },
         },
@@ -420,27 +420,27 @@ window.addEventListener("DOMContentLoaded", (event) => {
                         '지역대학을 글로컬 "대학 30"프로젝트를',
                         '통하여 집중 지원하겠습니다.',
                     ],
-                    cnt : [
+                    cnt: [
                         {
                             src: './images/component/step/life03-img.png',
                         }
                     ]
                 },
-                tab02 : {
+                tab02: {
                     btnTitle: '대학 혁신 생태계',
                     title: [
                         '대학혁신을 가로막는 대학 안 팎의 벽들을',
                         '과감하게 허물어서 대학이 혁신 생태계의',
                         '중심 역할을 할 수 있도록 지원하겠습니다.',
                     ],
-                    cnt : [
+                    cnt: [
                         'RISE(지역혁신중심 대학지원체계)',
                         '의대 선진화',
                         '첨단분야 인재양성',
                         '전공자율선택제',
                         '대학의 평생교육 기능 강화',
                     ],
-                    nextTitle : '대학·취업',
+                    nextTitle: '대학·취업',
                     nextCnt: '대학에서 학생은 전공자율선택제로 학과·전공 구분없이 무전공으로 입학하여 자유롭게 진로를 선택할 수 있고, 대학-기업-지자체가 함께 하는 RISE·글로컬대학을 통해 타 대학·기업과 연계하여 학생들은 양질의 교육울 받을 수 있습니다.'
                 }
             }
@@ -450,13 +450,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
             tabs: {
                 tab01: {
                     btnTitle: '교육발전 특구',
-                    title : [
+                    title: [
                         '지역마다 교육청·지자체·대학·산업체 등이',
                         '협력하여 지역 설정에 맞춘 교육과',
                         '인재 양성 프로그램을 발전시킬 수 있도록',
                         '적극적으로 지원하겠습니다.'
                     ],
-                    cnt : [
+                    cnt: [
                         '학교시설 복합화',
                         '고교 직업교육 강화',
                         '자율형 공립고 2.0',
@@ -478,12 +478,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
                 '글로벌 교육 선도국의 리더십을',
                 '발휘하는 교육부로 거듭나겠습니다.',
             ],
-            cnt : [
+            cnt: [
                 '교육데이터 플랫폼 구축',
                 '교육부 조직개혁',
                 '한국어교육 강화',
             ],
-            
+
         },
     ]
 
@@ -536,18 +536,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
                 const btnIndex = Array.from(parent.children).indexOf(this);
                 const buttonId = this.dataset.id;
                 const foundItem = lifeData.find(item => item.id === buttonId);
-        
+
                 [popHeadStage, popBodyStage, popFooterStage].forEach(stage => stage.innerHTML = '');
-        
+
                 const popTabBtns = createElement('div', 'tab-btns');
                 popHeadStage.appendChild(popTabBtns);
-        
+
                 const tabWrapper = createElement('div', 'tab-wrapper');
                 tabWrapper.appendChild(stepPopTit);
                 tabWrapper.appendChild(stepPopCnt);
                 tabStage.appendChild(tabWrapper);
                 popBodyStage.appendChild(tabStage);
-        
+
                 const footCloseBtn = createElement('button', 'popup__close');
                 footCloseBtn.type = 'button';
                 footCloseBtn.title = '확인';
@@ -556,7 +556,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                     stepPopup.classList.remove('active');
                 });
                 popFooterStage.appendChild(footCloseBtn);
-        
+
                 const renderTabContent = (tabData) => {
                     stepPopTit.innerHTML = '';
                     stepPopCnt.innerHTML = '';
@@ -578,25 +578,25 @@ window.addEventListener("DOMContentLoaded", (event) => {
                         }
                     });
                 };
-        
+
                 Object.keys(foundItem.tabs).forEach((tabKey, tabIdx) => {
                     const tabData = foundItem.tabs[tabKey];
                     const tabBtn = createElement('button', 'tab__btn popup-tab__btn');
                     tabBtn.type = 'button';
                     tabBtn.textContent = tabData.btnTitle;
                     popTabBtns.appendChild(tabBtn);
-        
+
                     if (tabIdx === 0) {
                         renderTabContent(tabData);
                     }
-        
+
                     tabBtn.addEventListener('click', () => {
                         document.querySelectorAll('.popup-tab__btn').forEach(btn => btn.classList.remove('active'));
                         tabBtn.classList.add('active');
                         renderTabContent(tabData);
                     });
                 });
-        
+
                 setTimeout(() => {
                     const createdTabBtns = document.querySelectorAll('.popup-tab__btn');
                     if (createdTabBtns[btnIndex]) {
@@ -604,57 +604,57 @@ window.addEventListener("DOMContentLoaded", (event) => {
                         renderTabContent(foundItem.tabs[Object.keys(foundItem.tabs)[btnIndex]]);
                     }
                 }, 0);
-        
+
                 if (this.classList.contains('last')) {
                     const lastTabData = foundItem.tabs[Object.keys(foundItem.tabs).slice(-1)[0]];
-        
+
                     const lastBtn = createElement('button', 'popup__last-btn');
                     lastBtn.type = 'button';
                     lastBtn.title = '확인';
-        
+
                     lastBtn.addEventListener('click', function () {
                         popHeadStage.innerHTML = '';
-                        
+
                         nextTit.textContent = lastTabData.nextTitle;
-        
+
                         popBodyStage.innerHTML = '';
                         const nextWrapper = createElement('div', 'next-wrapper');
                         nextWrapper.innerHTML = lastTabData.nextCnt;
-        
+
                         popFooterStage.innerHTML = '';
                         const nextBtn = createElement('button', 'popup__next');
                         nextBtn.type = 'button';
                         nextBtn.title = '다음 단계로 →';
-        
+
                         popHeadStage.appendChild(nextTit);
                         popBodyStage.appendChild(nextWrapper);
                         popFooterStage.appendChild(nextBtn);
                     });
-        
+
                     popFooterStage.innerHTML = '';
                     popFooterStage.appendChild(lastBtn);
                 }
-        
+
                 stepPopup.classList.add('active');
             });
         });
-        
+
     });
 
     const lastLifeCycle = document.querySelector('.life-cycle__list.step06.life__last');
     const checkLast = new MutationObserver(() => {
-        if(lastLifeCycle.classList.contains('active')) {
+        if (lastLifeCycle.classList.contains('active')) {
             console.log('이벤트 끝');
-            
+
             const targetId = 'eventLast';
             const lastId = lifeData.find(item => item.id === targetId);
             const joinBtn = createElement('button', 'join');
             setTimeout(() => {
                 dim.classList.add('active');
                 stepPopup.classList.add('active');
-                
+
                 nextTit.innerHTML = lastId.topTit;
-                
+
                 popBodyStage.innerHTML = '';
                 popBodyStage.appendChild(tabStage);
                 stepPopTit.innerHTML = '';
@@ -670,15 +670,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
                     stepPopCnt.appendChild(tabCnt);
                 });
                 popFooterStage.innerHTML = '';
-               
+
                 joinBtn.type = 'button';
                 joinBtn.title = '이벤트 참여하기';
                 popFooterStage.appendChild(joinBtn);
-                  
+
             }, 1000);
 
             joinBtn.addEventListener('click', function () {
-               eventCloseTxt()
+                eventCloseTxt()
             })
         }
     })
@@ -697,5 +697,45 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 
+    const urlCopy = document.querySelector(".sns__link.url");
+    const thisUrl = window.location.href;
+    urlCopy.addEventListener('click', function () {
+        navigator.clipboard.writeText(thisUrl).then(() => {
+            alert('URL이 복사되었습니다!')
+        })
+    });
+
+    const snsLinks = document.querySelectorAll(".sns__link");
+    const onlySnsLinks = Array.from(snsLinks).find(link => !link.querySelector(".url"));
+    onlySnsLinks.addEventListener('click', function () {
+        const platform = this.getAttribute('data-platform');
+        const url = encodeURIComponent(thisUrl);
+        const title = encodeURIComponent(document.title);
+        let shareUrl = '';
+
+        switch (platform) {
+            case 'facebook':
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                break;
+            case 'twitter': // X(구 트위터)
+                shareUrl = `https://twitter.com/intent/tweet?text=${title}&url=${url}`;
+                break;
+            case 'kakao':
+                shareUrl = `https://sharer.kakao.com/talk/friends/picker/link?url=${url}`;
+                alert('오류발생');
+                break;
+            case 'blog':
+                shareUrl = `https://share.naver.com/web/shareView.nhn?url=${url}&title=${title}`;
+                break;
+            case 'band':
+                shareUrl = `https://band.us/plugin/share?body=${title}%0A${url}&route=${url}`;
+                break;
+            default:
+                alert('지원하지 않는 플랫폼입니다.');
+                return;
+        }
+
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    })
 
 });
