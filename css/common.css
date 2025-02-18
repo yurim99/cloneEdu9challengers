@@ -83,7 +83,7 @@ body:has(.dim.active) {
     transform: translate(-50%, -50%);
 }
 
-.haader__link {
+.header__link {
     display: block;
     background-color: transparent;
     height: 30px;
@@ -91,14 +91,14 @@ body:has(.dim.active) {
     position: absolute;
 }
 
-.haader__link.daum {
+.header__link.daum {
     left: -5px;
     width: calc(70px + 10px);
     height: calc(30px + 10px);
     top: 0;
 }
 
-.haader__link.moe {
+.header__link.moe {
     left: 105px;
     width: 95px;
     top: 0;
@@ -260,14 +260,14 @@ body:has(.dim.active) {
     background-color: #fff;
 }
 
-.popup-swiper___btns {
+.popup-swiper__btns {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
 
-.popup-swiper___btn {
+.popup-swiper__btn {
     cursor: pointer;
     width: 70px;
     height: 70px;
@@ -277,11 +277,11 @@ body:has(.dim.active) {
     transition: all .15s ease-in;
 }
 
-.popup-swiper___btn.prev {
+.popup-swiper__btn.prev {
     background-image: url(../images/component/cardNews/cardnews_btn-prev.png);
 }
 
-.popup-swiper___btn.next {
+.popup-swiper__btn.next {
     background-image: url(../images/component/cardNews/cardnews_btn-next.png);
 }
 
