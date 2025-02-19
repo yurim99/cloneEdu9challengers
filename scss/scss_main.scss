@@ -167,14 +167,12 @@
     }
 
     &01 {
-        background-image: url(../images/component/main/part01_on.png);
         width: 574px;
         height: 370px;
         bottom: 1px;
         left: 1px;
 
         &::before {
-            background-image: url(../images/component/main/part01_off.png);
             left: 0;
             bottom: 0;
             transform: rotate(0deg);
@@ -190,7 +188,6 @@
     }
 
     &02 {
-        background-image: url(../images/component/main/part02_on.png);
         width: 539px;
         height: 574px;
         bottom: 1px;
@@ -198,7 +195,6 @@
         z-index: 1;
 
         &::before {
-            background-image: url(../images/component/main/part02_off.png);
             left: -137px;
         }
 
@@ -213,7 +209,6 @@
     }
 
     &03 {
-        background-image: url(../images/component/main/part03_on.png);
         width: 574px;
         height: 566px;
         right: 2px;
@@ -221,7 +216,6 @@
         z-index: 2;
 
         &::before {
-            background-image: url(../images/component/main/part03_off.png);
             right: 2px;
             transition: 1.5s linear;
         }
@@ -233,6 +227,17 @@
         &.hide::before {
             transform: rotate(0deg);
             transition: .8s linear;
+        }
+    }
+
+}
+
+@for $i from 1 through 3 {
+    .part#{$i} {
+        background-image: url(../images/component/main/part#{$i}_on.png);
+
+        &::before {
+            background-image: url(../images/component/main/part#{$i}_off.png);
         }
     }
 }
@@ -350,7 +355,6 @@
 
 .people {
     &1 {
-        background-image: url(../images/component/main/people01.png);
         width: 122px;
         height: 88px;
         top: 605px;
@@ -360,7 +364,6 @@
     }
 
     &2 {
-        background-image: url(../images/component/main/people02.png);
         width: 130px;
         height: 122px;
         top: 565px;
@@ -370,7 +373,6 @@
     }
 
     &3 {
-        background-image: url(../images/component/main/people03.png);
         width: 112px;
         height: 240px;
         top: 480px;
@@ -379,7 +381,6 @@
     }
 
     &4 {
-        background-image: url(../images/component/main/people04.png);
         width: 140px;
         height: 246px;
         top: 490px;
@@ -389,12 +390,17 @@
     }
 
     &5 {
-        background-image: url(../images/component/main/people05.png);
         width: 309px;
         height: 227px;
         top: 655px;
         right: 67px;
         animation-duration: 3s;
+    }
+}
+
+@for $i from 1 through 5 {
+    .people#{i} {
+        background-image: url(../images/component/main/people0#{i}.png);
     }
 }
 
@@ -837,14 +843,7 @@
             }
 
             &01 {
-                background-image: url(../images/component/event/keyword__btn01-off.png);
-
-                &.on {
-                    background-image: url(../images/component/event/keyword__btn01-on.png);
-                }
-
                 &.move {
-                    animation-name: btn01_move;
                     z-index: 2;
                 }
 
@@ -862,16 +861,6 @@
             }
 
             &02 {
-                background-image: url(../images/component/event/keyword__btn02-off.png);
-
-                &.on {
-                    background-image: url(../images/component/event/keyword__btn02-on.png);
-                }
-
-                &.move {
-                    animation-name: btn02_move;
-                }
-
                 @keyframes btn02_move {
                     0% {
                         top: 0;
@@ -886,16 +875,6 @@
             }
 
             &03 {
-                background-image: url(../images/component/event/keyword__btn03-off.png);
-
-                &.on {
-                    background-image: url(../images/component/event/keyword__btn03-on.png);
-                }
-
-                &.move {
-                    animation-name: btn03_move;
-                }
-
                 @keyframes btn03_move {
                     0% {
                         top: 0;
@@ -910,16 +889,6 @@
             }
 
             &04 {
-                background-image: url(../images/component/event/keyword__btn04-off.png);
-
-                &.on {
-                    background-image: url(../images/component/event/keyword__btn04-on.png);
-                }
-
-                &.move {
-                    animation-name: btn04_move;
-                }
-
                 @keyframes btn04_move {
                     0% {
                         top: 0;
@@ -1002,6 +971,20 @@
 
 }
 
+@for $i from 1 through 4 {
+    .event-keyword__btn0#{i} {
+        background-image: url(../images/component/event/keyword__btn0#{i}-off.png);
+
+        &.on {
+            background-image: url(../images/component/event/keyword__btn#{i}-on.png);
+        }
+
+        &.move {
+            animation-name: btn#{i}_move;
+        }
+    }
+}
+
 @keyframes keyword01 {
     0% {
         right: 0;
@@ -1068,17 +1051,6 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 105px;
-}
-
-.click__ani::after {
-    content: '';
-    display: block;
-    background-image: url(../images/common/hand.png);
-    width: 73px;
-    height: 86px;
-    position: absolute;
-    animation: 1s zoomClick infinite linear forwards;
-    background-color: transparent;
 }
 
 @keyframes zoomClick {
@@ -1152,118 +1124,94 @@
                 bottom: 70px;
                 left: 330px;
             }
+
             &:has(.on) .life-cycle__deco {
                 animation-name: life-cycle-ani-1;
             }
         }
+
         &02::before {
             left: 465px;
         }
+
         &03 {
             & .life-cycle__deco {
-                background-image: url(../images/component/step/life-ani-2.png);
                 width: 275px;
                 height: 252px;
                 bottom: 300px;
                 right: -100px;
             }
-            &.move .life-cycle__deco {
-                animation-name: life-cycle-ani-2;
-            }  
+
             &::before {
                 left: 715px;
             }
+
             & .life-cycle__btns {
                 bottom: -80px;
                 left: -110px;
             }
         }
+
         &04 {
             &::before {
                 left: 230px;
             }
+
             & .life-cycle__btns {
                 left: -255px;
             }
-    
+
             & .life-cycle__deco {
-                background-image: url(../images/component/step/life-ani-2.png);
                 width: 340px;
                 height: 254px;
                 bottom: 340px;
                 left: 95px;
             }
-            
-            &.move .life-cycle__deco {
-                animation-name: life-cycle-ani-3;
-            }
+
         }
+
         &05 {
             & .life-cycle__deco {
-                background-image: url(../images/component/step/life-ani-4.png);
                 width: 340px;
                 height: 242px;
                 bottom: 70px;
                 left: -470px;
             }
-            
-            &.move .life-cycle__deco {
-                animation-name: life-cycle-ani-4;
-            }
+
             &::before {
                 left: 400px;
             }
         }
+
         &06 {
             &::before {
                 left: 685px;
             }
+
             & .life-cycle__deco {
-                background-image: url(../images/component/step/life-ani-5.png);
                 width: 348px;
                 height: 324px;
                 bottom: 300px;
                 right: 0;
             }
-            
-            &.move .life-cycle__deco {
-                animation-name: life-cycle-ani-5;
-            }
         }
     }
     
-    &.active.step {
-        &02::before {
-            background-image: url(../images/component/step/life-purpose-1.png);
-        }
-    
-        &03::before {
-            background-image: url(../images/component/step/life-purpose-2.png);
-        }
-    
-        &04::before {
-            background-image: url(../images/component/step/life-purpose-3.png);
-        }
-    
-        &05::before {
-            background-image: url(../images/component/step/life-purpose-4.png);
-        }
-        &06::before {
-            background-image: url(../images/component/step/life-purpose-5.png);
-        }
-    }
     &:nth-child(3n) {
         flex: 1 1 100%;
     }
+
     &__item {
         background-repeat: no-repeat;
         background-size: contain;
         position: relative;
+
         &.start {
             background-image: url(../images/component/step/life_start.png);
             width: 388px;
             height: 202px;
             top: -65px;
+
             &::before,
             &::after {
                 content: '';
@@ -1273,6 +1221,7 @@
                 position: absolute;
                 z-index: 1;
             }
+
             &::before {
                 background-image: url(../images/component/step/life-deco-wood.png);
                 width: 170px;
@@ -1280,6 +1229,7 @@
                 bottom: -5px;
                 left: -60px;
             }
+
             &::after {
                 background-image: url(../images/component/step/life-deco-zoom.png);
                 width: 104px;
@@ -1289,6 +1239,7 @@
             }
         }
     }
+
     &__btn {
         width: 203px;
         height: 70px;
@@ -1298,24 +1249,25 @@
         cursor: pointer;
         position: relative;
         transition: all .15s ease-in;
-        
+
         &s {
             position: relative;
             bottom: -68px;
             opacity: 0;
             visibility: hidden;
         }
+
         &.on {
             opacity: 0;
             visibility: hidden;
         }
-        
+
         &::after {
             top: 20px;
             content: '';
             right: -20px;
         }
-        
+
         &.start {
             background-image: url(../images/component/step/btn_start.png);
             position: absolute;
@@ -1323,6 +1275,7 @@
             left: 70px;
         }
     }
+
     &__deco {
         background-size: contain;
         transition: all .15s ease-in;
@@ -1330,13 +1283,29 @@
         opacity: 0;
         visibility: hidden;
     }
+
     &-pop__btn {
         border-radius: 88px;
         cursor: pointer;
         border-radius: 90px;
     }
+
     &__tit {
         display: none;
+    }
+}
+
+@for $i from 2 through 6 {
+    $image-index: $i - 1;
+    .life-cycle.active.step0#{$i}::before {
+        background-image: url(../images/component/step/life-purpose-#{$image-index}.png);
+    }
+    .life-cycle.step0#{i} .life-cycle__deco {
+        background-image: url(../images/component/step/life-ani-#{i}.png);
+
+        &.move .life-cycle__deco {
+            animation-name: life-cycle-ani-#{i};
+        }
     }
 }
 
@@ -1351,6 +1320,7 @@
     opacity: 1;
     visibility: visible;
 }
+
 @keyframes life-cycle-ani-1 {
     0% {
         left: 330px;
@@ -1397,6 +1367,7 @@
         left: -95px;
     }
 }
+
 @keyframes life-cycle-ani-4 {
     0% {
         left: -470px;
@@ -1438,6 +1409,7 @@
     width: 430px;
     $color-blue: #223051;
     $color-green: #349629;
+
     & .popup__head {
         padding: 20px 20px 0;
         box-sizing: border-box;
@@ -1460,16 +1432,19 @@
             }
         }
     }
+
     & .popup-head-wrapper {
         width: 100%;
         height: 60px;
     }
+
     & .popup__body {
         padding: 0 20px;
         background-color: var(--color-blue);
         position: relative;
         top: -1px;
     }
+
     & .tab-stage {
         background-color: #fff;
         padding: 10px;
@@ -1479,6 +1454,7 @@
         height: 360px;
         overflow: hidden;
     }
+
     & .popup__footer {
         padding: 0 20px 20px;
         border-radius: 0 0 30px 30px;
@@ -1487,7 +1463,7 @@
         top: -2px;
         text-align: center;
         padding-top: 20px;
-        
+
         & button {
             background-repeat: no-repeat;
             background-image: url(../images/component/step/popup__close.png);
@@ -1496,11 +1472,12 @@
             height: 60px;
             position: relative;
             cursor: pointer;
-            
+
             &.join {
                 background-image: url(../images/component/event/event01-popup__join.png);
             }
         }
+
         &>button::after {
             content: '';
             display: block;
@@ -1514,12 +1491,12 @@
             transition: all .15s ease-in;
             transform: initial;
         }
+
         & .popup__next {
             background-image: url(../images/component/step/btn_next.png);
         }
     }
-    
-    
+
 }
 
 .tab-btns {
@@ -1543,12 +1520,13 @@
     font-weight: 600;
     transition: all .15s ease-in;
     cursor: pointer;
-    
+
     &.active {
         background-color: #fff;
         color: var(--color-green);
     }
 }
+
 .active .life-cycle__tit {
     display: block;
 }
@@ -1563,7 +1541,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
+
         &>p {
             color: #222;
             font-size: 20px;
@@ -1571,9 +1549,10 @@
             font-weight: 500;
         }
     }
+
     &__cnt {
         padding: 15px 10px 0;
-        
+
         &>p {
             padding-left: 20px;
             position: relative;
@@ -1581,6 +1560,7 @@
             line-height: 24px;
             margin-bottom: 10px;
             display: block;
+
             &::before,
             &::after {
                 content: '';
@@ -1591,12 +1571,13 @@
                 transform: translateY(-50%);
                 left: 0;
             }
+
             &::before {
                 background-color: var(--color-green);
                 width: 14px;
                 height: 14px;
             }
-            
+
             &::after {
                 width: 8px;
                 height: 8px;
@@ -1606,19 +1587,21 @@
         }
     }
 }
+
 .next {
     &-stage {
         opacity: 0;
         visibility: hidden;
         height: 0;
         transition: all .15s ease-in;
-        
+
         &.active {
             opacity: 1;
             visibility: visible;
             height: auto;
         }
     }
+
     &__tit {
         padding-bottom: 20px;
         font-size: 36px;
@@ -1626,6 +1609,7 @@
         text-align: center;
         color: #fff;
     }
+
     &-wrapper {
         background-color: #fff;
         border-radius: 20px;
@@ -1641,7 +1625,7 @@
         justify-content: center;
         text-align: center;
         position: relative;
-    
+
         &::before,
         &::after {
             content: '';
@@ -1653,11 +1637,12 @@
             background-size: contain;
             position: absolute;
         }
+
         &::before {
             top: 10px;
             left: 10px;
         }
-        
+
         &::after {
             bottom: 10px;
             right: 10px;
@@ -1673,6 +1658,7 @@
         height: 873px;
         position: relative;
     }
+
     &__link {
         background-color: transparent;
         position: absolute;
@@ -1681,7 +1667,7 @@
         bottom: 162px;
         right: 430px;
         border-radius: 53px;
-        
+
         &::after {
             right: -30px;
             top: 50px;
@@ -1701,6 +1687,7 @@
         gap: 55px;
         flex-direction: column;
     }
+
     &__list {
         background-image: url(../images/component/share_icon.png);
         width: 738px;
@@ -1709,6 +1696,7 @@
         display: flex;
         justify-content: space-between;
     }
+
     &__link {
         display: block;
         width: 98px;
@@ -1727,10 +1715,12 @@
         align-items: center;
         justify-content: center;
     }
+
     &__tit {
         font-size: 30px;
         font-weight: 600;
         color: #222218;
+
         &>em {
             font-style: normal;
             color: #ff9102;

@@ -465,3 +465,15 @@ body {
     height: 70px;
     border-radius: 50%;
 }
+
+// 공통 애니
+.click__ani::after {
+    content: '';
+    display: block;
+    background-image: url(../images/common/hand.png);
+    width: 73px;
+    height: 86px;
+    position: absolute;
+    animation: 1s zoomClick infinite linear forwards;
+    background-color: transparent;
+}
