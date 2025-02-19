@@ -23,6 +23,9 @@ body:has(.dim.active) {
   background-size: cover;
   position: relative;
 }
+.stage__tit {
+  text-align: center;
+}
 
 .dim {
   width: 100%;
