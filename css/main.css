@@ -72,7 +72,7 @@
     width: 574px;
     height: 370px;
     bottom: 1px;
-    left: 1px;   
+    left: 1px;
 }
 
 .part01::before {
@@ -521,22 +521,26 @@
     0% {
         top: -160px;
     }
+
     50% {
         top: -190px;
     }
+
     100% {
         top: -160px;
     }
 }
 
 @keyframes click_ani {
-    0%{
+    0% {
         left: 70px;
     }
-    50%{
+
+    50% {
         left: 170px;
     }
-    100%{
+
+    100% {
         left: 70px;
     }
 }
@@ -545,6 +549,7 @@
     0% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
         top: 450px;
@@ -571,7 +576,7 @@
     padding-top: 155px;
 }
 
-.card-news__tit > img {
+.card-news__tit>img {
     min-width: 847px;
 }
 
@@ -743,7 +748,7 @@
     bottom: 17px;
 }
 
-.event-keyword__list + .event-keyword__list {
+.event-keyword__list+.event-keyword__list {
     padding-top: 37px;
 }
 
@@ -796,6 +801,7 @@
         right: 0;
         top: 0;
     }
+
     100% {
         right: -500px;
         top: 300px;
@@ -813,13 +819,14 @@
         right: 0;
         top: 0;
     }
+
     100% {
         right: -500px;
         top: 200px;
     }
 }
 
-.event-keyword__lists:has(.keyword__btn02.on)  .keyword__btn03::before {
+.event-keyword__lists:has(.keyword__btn02.on) .keyword__btn03::before {
     opacity: 1;
     visibility: visible;
     animation-name: keyword03;
@@ -830,13 +837,14 @@
         right: 0;
         top: 0;
     }
+
     100% {
         right: -500px;
         top: 50px;
     }
 }
 
-.event-keyword__lists:has(.keyword__btn03.on)  .keyword__btn04::before {
+.event-keyword__lists:has(.keyword__btn03.on) .keyword__btn04::before {
     opacity: 1;
     visibility: visible;
     animation-name: keyword04;
@@ -847,6 +855,7 @@
         right: 0;
         top: 0;
     }
+
     100% {
         right: -500px;
         top: -80px;
@@ -868,31 +877,38 @@
 }
 
 .event-keyword__btn.on::after {
-   opacity: 1;
-   visibility: visible; 
+    opacity: 1;
+    visibility: visible;
 }
 
 .keyword__btn01 {
     background-image: url(../images/component/event/keyword__btn01-off.png);
 }
+
 .keyword__btn01.on {
     background-image: url(../images/component/event/keyword__btn01-on.png);
 }
+
 .keyword__btn02 {
     background-image: url(../images/component/event/keyword__btn02-off.png);
 }
+
 .keyword__btn02.on {
     background-image: url(../images/component/event/keyword__btn02-on.png);
 }
+
 .keyword__btn03 {
     background-image: url(../images/component/event/keyword__btn03-off.png);
 }
+
 .keyword__btn03.on {
     background-image: url(../images/component/event/keyword__btn03-on.png);
 }
+
 .keyword__btn04 {
     background-image: url(../images/component/event/keyword__btn04-off.png);
 }
+
 .keyword__btn04.on {
     background-image: url(../images/component/event/keyword__btn04-on.png);
 }
@@ -927,6 +943,7 @@
         top: 0;
         left: 0;
     }
+
     100% {
         top: 282px;
         left: 624px;
@@ -942,6 +959,7 @@
         top: 0;
         left: 0;
     }
+
     100% {
         top: 150px;
         left: 624px;
@@ -957,6 +975,7 @@
         top: 0;
         left: 0;
     }
+
     100% {
         top: 18px;
         left: 624px;
@@ -972,6 +991,7 @@
         top: 0;
         left: 0;
     }
+
     100% {
         top: -114px;
         left: 624px;
@@ -996,6 +1016,7 @@
     top: 0;
     border-radius: 70px;
 }
+
 .popup__footer .popup__close.join {
     background-image: url(../images/component/event/event01-popup__join.png);
     width: 317px;
@@ -1029,9 +1050,11 @@
     0% {
         scale: 1;
     }
+
     50% {
         scale: 1.1;
     }
+
     100% {
         scale: 1;
     }
@@ -1066,7 +1089,7 @@
 }
 
 .life-cycle__list {
-    flex:  1 1 50%;
+    flex: 1 1 50%;
     height: 130px;
     position: relative;
 }
@@ -1101,6 +1124,7 @@
 .life-cycle__list.step04::before {
     left: 230px;
 }
+
 .life-cycle__list.active.step04::before {
     background-image: url(../images/component/step/life-purpose-3.png);
 }
@@ -1108,6 +1132,7 @@
 .life-cycle__list.step05::before {
     left: 400px;
 }
+
 .life-cycle__list.active.step05::before {
     background-image: url(../images/component/step/life-purpose-4.png);
 }
@@ -1121,7 +1146,7 @@
 }
 
 .life-cycle__list:nth-child(3n) {
-    flex:  1 1 100%;
+    flex: 1 1 100%;
 }
 
 .life-cycle__item {
@@ -1213,7 +1238,7 @@
     left: -110px;
 }
 
-.step01:has(.on)  .life-cycle__deco {
+.step01:has(.on) .life-cycle__deco {
     animation-name: life-cycle-ani-1;
 }
 
@@ -1222,12 +1247,13 @@
     0% {
         left: 330px;
     }
+
     100% {
         left: 940px;
     }
 }
 
-.on + .life-cycle__deco {
+.on+.life-cycle__deco {
     animation-duration: 1.5s;
     opacity: 1;
     visibility: visible;
@@ -1256,19 +1282,23 @@
         right: -100px;
         bottom: 300px;
     }
+
     25% {
-        
+
         right: -100px;
         bottom: 50px;
     }
+
     100% {
         bottom: 55px;
         right: 690px;
     }
 }
-.step04  .life-cycle__btns {
+
+.step04 .life-cycle__btns {
     left: -255px;
 }
+
 .step04 .life-cycle__deco {
     background-image: url(../images/component/step/life-ani-2.png);
     width: 340px;
@@ -1286,11 +1316,13 @@
         bottom: 340px;
         left: 95px;
     }
+
     50% {
         background-image: url(../images/component/step/life-ani-3.png);
         bottom: 200px;
         left: -195px;
     }
+
     100% {
         background-image: url(../images/component/step/life-ani-3.png);
         bottom: 70px;
@@ -1315,9 +1347,11 @@
         left: -470px;
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
+
     100% {
         left: 50px;
     }
@@ -1340,10 +1374,12 @@
         bottom: 300px;
         right: 0;
     }
+
     30% {
         bottom: 50px;
         right: 0;
     }
+
     100% {
         bottom: 50px;
         right: 700px;
@@ -1370,8 +1406,8 @@
 
 .step__popup {
     width: 430px;
-    --color-blue : #223051;
-    --color-green : #349629;
+    --color-blue: #223051;
+    --color-green: #349629;
 }
 
 .step__popup .popup__head {
@@ -1386,7 +1422,7 @@
     height: 60px;
 }
 
-.step__popup .popup__head > .popup__close {
+.step__popup .popup__head>.popup__close {
     width: 54px;
     height: 64px;
     background-color: var(--color-blue);
@@ -1395,8 +1431,8 @@
     border-radius: 0 15px 15px 0;
 }
 
-.step__popup .popup__head > .popup__close::before,
-.step__popup .popup__head > .popup__close::after {
+.step__popup .popup__head>.popup__close::before,
+.step__popup .popup__head>.popup__close::after {
     width: 35px;
     height: 2px;
     border-radius: 2px;
@@ -1457,6 +1493,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .step-pop__tit>p {
     color: #222;
     font-size: 20px;
@@ -1468,7 +1505,7 @@
     padding: 15px 10px 0;
 }
 
-.step-pop__cnt > p {
+.step-pop__cnt>p {
     padding-left: 20px;
     position: relative;
     font-size: 20px;
@@ -1477,8 +1514,8 @@
     display: block;
 }
 
-.step-pop__cnt > p::before,
-.step-pop__cnt > p::after {
+.step-pop__cnt>p::before,
+.step-pop__cnt>p::after {
     content: '';
     display: block;
     border-radius: 50%;
@@ -1488,13 +1525,13 @@
     left: 0;
 }
 
-.step-pop__cnt > p::before {
+.step-pop__cnt>p::before {
     background-color: var(--color-green);
     width: 14px;
     height: 14px;
 }
 
-.step-pop__cnt > p::after {
+.step-pop__cnt>p::after {
     width: 8px;
     height: 8px;
     background-color: #fff;
@@ -1529,7 +1566,7 @@
     background-image: url(../images/component/step/btn_next.png);
 }
 
-.step__popup .popup__footer > button::after {
+.step__popup .popup__footer>button::after {
     content: '';
     display: block;
     background: url(../images/common/hand.png) no-repeat;
@@ -1605,10 +1642,11 @@
     top: 10px;
     left: 10px;
 }
+
 .next-wrapper::after {
     bottom: 10px;
     right: 10px;
-    transform:  rotate(180deg);
+    transform: rotate(180deg);
 }
 
 /* 카톡 플친 영역 */
@@ -1698,7 +1736,7 @@
     position: absolute;
     top: 170px;
     left: 580px;
-    animation: typing 5s infinite steps(20) ;
+    animation: typing 5s infinite steps(20);
     white-space: nowrap;
     overflow: hidden;
 }
@@ -1707,9 +1745,11 @@
     0% {
         width: 0;
     }
+
     50% {
         width: 300px;
     }
+
     100% {
         width: 0;
     }

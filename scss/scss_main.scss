@@ -1,3 +1,10 @@
+$img-base-path: "../images/component";
+$img-main-path: $img-base-path + "/main/";
+$img-card-path: $img-base-path + "/cardNews/";
+$img-event-path: $img-base-path + "/event/";
+$img-step-path: $img-base-path + "/step/";
+$img-yutub-path: $img-base-path + "/youtube/";
+
 /* 메인 비주얼 */
 .main {
     &-stage {
@@ -5,7 +12,7 @@
         margin: 0 auto;
         overflow: hidden;
         height: 903px;
-        background-image: url(../images/component/main/main_visual.png);
+        background-image: url(#{$img-main-path}main_visual.png);
         background-position: center;
     }
 
@@ -23,7 +30,7 @@
         z-index: 2;
 
         &-border {
-            background-image: url(../images/component/main/main_semicirecle-bg.png);
+            background-image: url(#{$img-main-path}main_semicirecle-bg.png);
             width: 1153px;
             height: 578px;
             position: relative;
@@ -54,7 +61,7 @@
             height: 82px;
             cursor: pointer;
             z-index: 2;
-            background-image: url(../images/component/main/cauge-bar-btn.png);
+            background-image: url(#{$img-main-path}cauge-bar-btn.png);
             background-repeat: no-repeat;
             background-position: center;
             top: -13px;
@@ -75,7 +82,7 @@
                 top: 20px;
                 left: 70px;
                 animation: 2s click_ani infinite linear forwards;
-                transition: all .15s ease-in;
+                transition:$transition;
             }
 
             &.active {
@@ -91,7 +98,7 @@
         background-repeat: no-repeat;
         width: 0;
         height: 55px;
-        background-image: url(../images/component/main/cauge-bar-on.png);
+        background-image: url(#{$img-main-path}cauge-bar-on.png);
         transition: all 2s linear;
         visibility: hidden;
 
@@ -103,12 +110,12 @@
 
     &-ctrl-wrap {
         width: 100%;
-        background-image: url(../images/component/main/cauge-bar-off.png);
+        background-image: url(#{$img-main-path}cauge-bar-off.png);
     }
 }
 
 .sub__semicircle {
-    background-image: url(../images/component/main/sub_semicircle.png);
+    background-image: url(#{$img-main-path}sub_semicircle.png);
     width: 534px;
     height: 276px;
     bottom: 1px;
@@ -117,7 +124,7 @@
 }
 
 .mini__semicircle {
-    background-image: url(../images/component/main/mini_semicircle.png);
+    background-image: url(#{$img-main-path}mini_semicircle.png);
     width: 244px;
     height: 123px;
     bottom: 2px;
@@ -125,7 +132,7 @@
     left: 50%;
 
     &-arrow {
-        background-image: url(../images/component/main/main__semicircle-arrow.png);
+        background-image: url(#{$img-main-path}main__semicircle-arrow.png);
         background-repeat: no-repeat;
         background-size: contain;
         width: 185px;
@@ -234,10 +241,10 @@
 
 @for $i from 1 through 3 {
     .part#{$i} {
-        background-image: url(../images/component/main/part#{$i}_on.png);
+        background-image: url(#{$img-main-path}part#{$i}_on.png);
 
         &::before {
-            background-image: url(../images/component/main/part#{$i}_off.png);
+            background-image: url(#{$img-main-path}part#{$i}_off.png);
         }
     }
 }
@@ -250,7 +257,7 @@
     animation-fill-mode: forwards;
 
     &.scroll {
-        background-image: url(../images/component/main/scroll.png);
+        background-image: url(#{$img-main-path}scroll.png);
         width: 48px;
         height: 66px;
         right: 60px;
@@ -266,7 +273,7 @@
 }
 
 .cloud {
-    background-image: url(../images/component/main/cloud01.png);
+    background-image: url(#{$img-main-path}cloud01.png);
     background-size: contain;
 
     &__ani {
@@ -286,7 +293,7 @@
             left: 20px;
             width: 229px;
             height: 124px;
-            background-image: url(../images/component/main/book.png);
+            background-image: url(#{$img-main-path}book.png);
             animation-name: book_ani;
             animation-duration: 1.3s;
         }
@@ -326,7 +333,7 @@
         right: 257px;
 
         &>.man {
-            background-image: url(../images/component/main/man.png);
+            background-image: url(#{$img-main-path}man.png);
             width: 156px;
             height: 235px;
             top: -160px;
@@ -338,7 +345,7 @@
 }
 
 .run {
-    background-image: url(../images/component/main/run.png);
+    background-image: url(#{$img-main-path}run.png);
     width: 347px;
     height: 203px;
     top: 664px;
@@ -400,7 +407,7 @@
 
 @for $i from 1 through 5 {
     .people#{i} {
-        background-image: url(../images/component/main/people0#{i}.png);
+        background-image: url(#{$img-main-path}people0#{i}.png);
     }
 }
 
@@ -565,7 +572,7 @@
 /* 카드뉴스 */
 .card-news {
     &-stage {
-        background-image: url(../images/component/cardNews/cardnews_bg.png);
+        background-image: url(#{$img-card-path}cardnews_bg.png);
         height: 1130px;
         position: relative;
         top: -1px;
@@ -615,7 +622,7 @@
             &::after {
                 content: '';
                 display: block;
-                background-image: url(../images/component/cardNews/card-news-pop__btn-deco.png);
+                background-image: url(#{img-card-path}card-news-pop__btn-deco.png);
                 background-size: contain;
                 background-repeat: no-repeat;
                 width: 46px;
@@ -625,7 +632,7 @@
                 z-index: 1;
                 right: 10px;
                 bottom: 10px;
-                transition: all .15s ease-in;
+                transition:$transition;
             }
 
             &:hover::after {
@@ -643,7 +650,7 @@
         &>.popup__head {
             border-radius: 30px 30px 0 0;
             height: 80px;
-            background-color: var(--color-yellow);
+            background-color: $color-yellow;
         }
 
         &>.popup__body {
@@ -669,7 +676,7 @@
 /* 동영상 */
 .youtube {
     &-stage {
-        background-image: url(../images/component/youtube/youtube_bg.png);
+        background-image: url(#{$img-yutub-path}youtube_bg.png);
         height: 1510px;
     }
 
@@ -698,7 +705,7 @@
         &::after {
             content: '';
             display: block;
-            background-image: url(../images/component/youtube/youtube_deco.png);
+            background-image: url(#{$img-yutub-path}youtube_deco.png);
             width: 74px;
             height: 74px;
             position: absolute;
@@ -706,7 +713,7 @@
             top: calc(50% - 30px);
             left: 50%;
             transform: translate(-50%, -50%);
-            transition: all .15s ease-in;
+            transition:$transition;
         }
 
         &:hover::after {
@@ -719,14 +726,14 @@
 
         & .popup__head {
             padding-top: 20px;
-            background-color: var(--color-yellow);
+            background-color: $color-yellow;
             border-radius: 20px 20px 0 0;
         }
 
         & .popup__body {
             padding: 0 20px 20px;
             border-radius: 0 0 20px 20px;
-            background-color: var(--color-yellow);
+            background-color: $color-yellow;
         }
 
         & .video-stage {
@@ -739,7 +746,7 @@
 /* 이벤트 */
 .event {
     &-stage {
-        background-image: url(../images/component/event/event_bg.png);
+        background-image: url(#{$img-event-path}event_bg.png);
         height: 1736px;
     }
 
@@ -764,7 +771,7 @@
     &__content {
         width: 100%;
         height: 840px;
-        background-image: url(../images/component/event/event_content-wrap.png);
+        background-image: url(#{$img-event-path}event_content-wrap.png);
         background-repeat: no-repeat;
         box-sizing: border-box;
         padding: 118px 75px 0 70px;
@@ -775,7 +782,7 @@
         &::after {
             content: '';
             display: block;
-            background-image: url(../images/component/event/event__content-deco.png);
+            background-image: url(#{$img-event-path}event__content-deco.png);
             width: 480px;
             height: 324px;
             position: absolute;
@@ -794,7 +801,7 @@
             cursor: pointer;
             position: relative;
             z-index: 1;
-            transition: all .15s ease-in;
+            transition:$transition;
             animation-timing-function: linear;
             animation-duration: 1s;
             animation-fill-mode: forwards;
@@ -807,7 +814,7 @@
                 position: absolute;
                 opacity: 0;
                 visibility: hidden;
-                transition: all .15s ease-in;
+                transition:$transition;
             }
 
             &::before {
@@ -830,7 +837,7 @@
             }
 
             &::after {
-                background-image: url(../images/component/event/deco-check.png);
+                background-image: url(#{$img-event-path}deco-check.png);
                 width: 84px;
                 height: 68px;
                 top: 0;
@@ -944,7 +951,7 @@
         text-align: center;
 
         & .popup__close {
-            background-image: url(../images/component/event/event01-popup__close.png);
+            background-image: url(#{$img-event-path}event01-popup__close.png);
             background-repeat: no-repeat;
             background-size: contain;
             width: 253px;
@@ -959,7 +966,7 @@
                 top: 20px;
                 left: initial;
                 right: 0;
-                transition: all .15s ease-in;
+                transition:$transition;
                 transform: initial;
             }
 
@@ -973,10 +980,10 @@
 
 @for $i from 1 through 4 {
     .event-keyword__btn0#{i} {
-        background-image: url(../images/component/event/keyword__btn0#{i}-off.png);
+        background-image: url(#{$img-event-path}keyword__btn0#{i}-off.png);
 
         &.on {
-            background-image: url(../images/component/event/keyword__btn#{i}-on.png);
+            background-image: url(#{$img-event-path}keyword__btn#{i}-on.png);
         }
 
         &.move {
@@ -1034,7 +1041,7 @@
 }
 
 .event-drop-wrap {
-    background-image: url(../images/component/event/event-drop-wrap.png);
+    background-image: url(#{$img-event-path}event-drop-wrap.png);
     background-repeat: no-repeat;
     width: 680px;
     height: 481px;
@@ -1042,7 +1049,7 @@
 }
 
 .drop__zone {
-    background-image: url(../images/component/event/drop_zone.png);
+    background-image: url(#{$img-event-path}drop_zone.png);
     background-repeat: no-repeat;
     width: 343px;
     height: 94px;
@@ -1070,7 +1077,7 @@
 /* 이벤트2 */
 .step {
     &-stage {
-        background-image: url(../images/component/step/step_bg.png);
+        background-image: url(#{$img-step-path}step_bg.png);
         height: 2340px;
     }
 
@@ -1089,7 +1096,7 @@
 .life-cycle {
     &__lists {
         margin-top: 120px;
-        background-image: url(../images/component/step/life_road.png);
+        background-image: url(#{$img-step-path}life_road.png);
         background-repeat: no-repeat;
         height: 1020px;
         background-size: contain;
@@ -1107,18 +1114,18 @@
     &:not(:first-child)::before {
         content: '';
         display: block;
-        background-image: url(../images/component/step/life-purpose.png);
+        background-image: url(#{$img-step-path}life-purpose.png);
         width: 291px;
         height: 147px;
         position: absolute;
         bottom: 60px;
-        transition: all .15s ease-in;
+        transition:$transition;
     }
 
     &.step {
         &01 {
             & .life-cycle__deco {
-                background-image: url(../images/component/step/life-ani-1.png);
+                background-image: url(#{$img-step-path}life-ani-1.png);
                 width: 205px;
                 height: 203px;
                 bottom: 70px;
@@ -1207,7 +1214,7 @@
         position: relative;
 
         &.start {
-            background-image: url(../images/component/step/life_start.png);
+            background-image: url(#{$img-step-path}life_start.png);
             width: 388px;
             height: 202px;
             top: -65px;
@@ -1223,7 +1230,7 @@
             }
 
             &::before {
-                background-image: url(../images/component/step/life-deco-wood.png);
+                background-image: url(#{$img-step-path}life-deco-wood.png);
                 width: 170px;
                 height: 68px;
                 bottom: -5px;
@@ -1231,7 +1238,7 @@
             }
 
             &::after {
-                background-image: url(../images/component/step/life-deco-zoom.png);
+                background-image: url(#{$img-step-path}life-deco-zoom.png);
                 width: 104px;
                 height: 136px;
                 right: 30px;
@@ -1248,7 +1255,7 @@
         border-radius: 70px;
         cursor: pointer;
         position: relative;
-        transition: all .15s ease-in;
+        transition:$transition;
 
         &s {
             position: relative;
@@ -1269,7 +1276,7 @@
         }
 
         &.start {
-            background-image: url(../images/component/step/btn_start.png);
+            background-image: url(#{$img-step-path}btn_start.png);
             position: absolute;
             bottom: -90px;
             left: 70px;
@@ -1278,7 +1285,7 @@
 
     &__deco {
         background-size: contain;
-        transition: all .15s ease-in;
+        transition:$transition;
         animation-iteration-count: 1;
         opacity: 0;
         visibility: hidden;
@@ -1298,10 +1305,10 @@
 @for $i from 2 through 6 {
     $image-index: $i - 1;
     .life-cycle.active.step0#{$i}::before {
-        background-image: url(../images/component/step/life-purpose-#{$image-index}.png);
+        background-image: url(#{$img-step-path}life-purpose-#{$image-index}.png);
     }
     .life-cycle.step0#{i} .life-cycle__deco {
-        background-image: url(../images/component/step/life-ani-#{i}.png);
+        background-image: url(#{$img-step-path}life-ani-#{i}.png);
 
         &.move .life-cycle__deco {
             animation-name: life-cycle-ani-#{i};
@@ -1356,13 +1363,13 @@
     }
 
     50% {
-        background-image: url(../images/component/step/life-ani-3.png);
+        background-image: url(#{$img-step-path}life-ani-3.png);
         bottom: 200px;
         left: -195px;
     }
 
     100% {
-        background-image: url(../images/component/step/life-ani-3.png);
+        background-image: url(#{$img-step-path}life-ani-3.png);
         bottom: 70px;
         left: -95px;
     }
@@ -1419,7 +1426,7 @@
         &>.popup__close {
             width: 54px;
             height: 64px;
-            background-color: var(--color-blue);
+            background-color: $color-blue;
             right: -54px;
             top: 30px;
             border-radius: 0 15px 15px 0;
@@ -1440,7 +1447,7 @@
 
     & .popup__body {
         padding: 0 20px;
-        background-color: var(--color-blue);
+        background-color: $color-blue;
         position: relative;
         top: -1px;
     }
@@ -1458,7 +1465,7 @@
     & .popup__footer {
         padding: 0 20px 20px;
         border-radius: 0 0 30px 30px;
-        background-color: var(--color-blue);
+        background-color: $color-blue;
         position: relative;
         top: -2px;
         text-align: center;
@@ -1466,7 +1473,7 @@
 
         & button {
             background-repeat: no-repeat;
-            background-image: url(../images/component/step/popup__close.png);
+            background-image: url(#{$img-step-path}popup__close.png);
             background-size: contain;
             width: 270px;
             height: 60px;
@@ -1474,7 +1481,7 @@
             cursor: pointer;
 
             &.join {
-                background-image: url(../images/component/event/event01-popup__join.png);
+                background-image: url(#{$img-event-path}event01-popup__join.png);
             }
         }
 
@@ -1488,12 +1495,12 @@
             top: 20px;
             right: -20px;
             animation: 1s eventClick infinite linear forwards;
-            transition: all .15s ease-in;
+            transition:$transition;
             transform: initial;
         }
 
         & .popup__next {
-            background-image: url(../images/component/step/btn_next.png);
+            background-image: url(#{$img-step-path}btn_next.png);
         }
     }
 
@@ -1510,7 +1517,7 @@
     border-radius: 20px 20px 0 0;
     width: 100%;
     color: #fff;
-    background-color: var(--color-green);
+    background-color: $color-green;
     height: 60px;
     display: flex;
     align-items: center;
@@ -1518,12 +1525,12 @@
     font-size: 24px;
     line-height: 28px;
     font-weight: 600;
-    transition: all .15s ease-in;
+    transition:$transition;
     cursor: pointer;
 
     &.active {
         background-color: #fff;
-        color: var(--color-green);
+        color: $color-green;
     }
 }
 
@@ -1573,7 +1580,7 @@
             }
 
             &::before {
-                background-color: var(--color-green);
+                background-color: $color-green;
                 width: 14px;
                 height: 14px;
             }
@@ -1593,7 +1600,7 @@
         opacity: 0;
         visibility: hidden;
         height: 0;
-        transition: all .15s ease-in;
+        transition:$transition;
 
         &.active {
             opacity: 1;
@@ -1632,7 +1639,7 @@
             display: block;
             width: 30px;
             height: 20px;
-            background-image: url(../images/component/step/next_deco.png);
+            background-image: url(#{$img-step-path}next_deco.png);
             background-repeat: no-repeat;
             background-size: contain;
             position: absolute;
@@ -1654,7 +1661,7 @@
 /* 카톡 플친 영역 */
 .plus {
     &-stage {
-        background-image: url(../images/component/bg_friend.png);
+        background-image: url(#{$img-base-path}bg_friend.png);
         height: 873px;
         position: relative;
     }
@@ -1689,7 +1696,7 @@
     }
 
     &__list {
-        background-image: url(../images/component/share_icon.png);
+        background-image: url(#{$img-base-path}share_icon.png);
         width: 738px;
         height: 98px;
         margin: 0 auto;
@@ -1732,7 +1739,7 @@
 
 /* 키워드 영역 */
 .keyword-stage {
-    background-image: url(../images/component/bg_keyword.png);
+    background-image: url(#{$img-base-path}bg_keyword.png);
     height: 350px;
 }
 
