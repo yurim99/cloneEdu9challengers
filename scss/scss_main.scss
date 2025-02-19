@@ -8,10 +8,9 @@ $img-yutub-path: $img-base-path + "/youtube/";
 /* 메인 비주얼 */
 .main {
     &-stage {
-        max-width: 1920px;
+        @include size($maxW: 1920px, $h:903px);
         margin: 0 auto;
         overflow: hidden;
-        height: 903px;
         background-image: url(#{$img-main-path}main_visual.png);
         background-position: center;
     }
@@ -24,17 +23,13 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
     &__semicircle {
         margin-top: 17px;
-        width: 1153px;
-        height: 578px;
-        position: relative;
-        z-index: 2;
+        @include size($w:1153px, $h:578px);
+        @include position($p: relative, $z: 2);
 
         &-border {
             background-image: url(#{$img-main-path}main_semicirecle-bg.png);
-            width: 1153px;
-            height: 578px;
-            position: relative;
-            z-index: 10;
+            @include size($w:1153px, $h:578px);
+            @include position($p: relative, $z: 10);
         }
     }
 }
@@ -51,21 +46,16 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
     &__ctrl {
         margin-top: 15px;
-        width: 1137px;
-        height: 55px;
+        @include size($w:1137px, $h:55px);
         position: relative;
 
         &-btn {
-            position: absolute;
-            width: 100px;
-            height: 82px;
+            @include position($p, $t: -13px, $l :0, $z: 2);
+            @include size($w:100px, $h:82px);
             cursor: pointer;
-            z-index: 2;
             background-image: url(#{$img-main-path}cauge-bar-btn.png);
             background-repeat: no-repeat;
             background-position: center;
-            top: -13px;
-            left: 0;
             transition: all 2s linear;
 
             &:focus-visible {
@@ -76,28 +66,22 @@ $img-yutub-path: $img-base-path + "/youtube/";
                 content: '';
                 display: block;
                 background-image: url(../images/common/hand.png);
-                width: 73px;
-                height: 86px;
-                position: absolute;
-                top: 20px;
-                left: 70px;
+                @include size($w:73px, $h:86px);
+                @include position($p, $t: 20px, $l: 70px);
                 animation: 2s click_ani infinite linear forwards;
-                transition:$transition;
+                transition: $transition;
             }
 
             &.active {
-                left: initial;
                 left: calc(100% - 100px);
             }
         }
     }
 
     &-ctrl__on {
-        position: relative;
-        z-index: 1;
+        @include position($p: relative, $z: 1);
+        @include size($w:0, $h:55px);
         background-repeat: no-repeat;
-        width: 0;
-        height: 55px;
         background-image: url(#{$img-main-path}cauge-bar-on.png);
         transition: all 2s linear;
         visibility: hidden;
@@ -116,31 +100,21 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
 .sub__semicircle {
     background-image: url(#{$img-main-path}sub_semicircle.png);
-    width: 534px;
-    height: 276px;
-    bottom: 1px;
-    z-index: 2;
-    left: calc(50% + 2px);
+    @include size($w:534px, $h:276px);
+    @include position($z: 2, $b: 1px, $l: calc(50% + 2px));
 }
 
 .mini__semicircle {
     background-image: url(#{$img-main-path}mini_semicircle.png);
-    width: 244px;
-    height: 123px;
-    bottom: 2px;
-    z-index: 11;
-    left: 50%;
+    @include size($w:244px, $h:123px);
+    @include position($z: 11, $b: 2px, $l);
 
     &-arrow {
         background-image: url(#{$img-main-path}main__semicircle-arrow.png);
         background-repeat: no-repeat;
         background-size: contain;
-        width: 185px;
-        height: 71px;
-        position: absolute;
-        bottom: -24px;
-        z-index: 12;
-        left: 425px;
+        @include size($w:185px, $h:71px);
+        @include position($p, $b: -24px, $l: 425px, $z: 12);
         transform-origin: 154px 42px;
         transition: all 2s linear;
     }
@@ -156,11 +130,8 @@ $img-yutub-path: $img-base-path + "/youtube/";
         content: '';
         display: block;
         background-repeat: no-repeat;
-        width: 1147px;
-        height: 575px;
-        position: absolute;
-        z-index: 1;
-        bottom: 1px;
+        @include size($w:1147px, $h:575px);
+        @include position($p, $z: 1, $b: 1px);
         transition: .5s linear;
         transform-origin: center bottom;
     }
@@ -174,14 +145,11 @@ $img-yutub-path: $img-base-path + "/youtube/";
     }
 
     &01 {
-        width: 574px;
-        height: 370px;
-        bottom: 1px;
-        left: 1px;
+        @include size($w:574px, $h:370px);
+        @include position($l: 1px, $b: 1px);
 
         &::before {
-            left: 0;
-            bottom: 0;
+            @include position($l: 0, $b: 0);
             transform: rotate(0deg);
         }
 
@@ -195,11 +163,8 @@ $img-yutub-path: $img-base-path + "/youtube/";
     }
 
     &02 {
-        width: 539px;
-        height: 574px;
-        bottom: 1px;
-        left: 137px;
-        z-index: 1;
+        @include size($w:537px, $h:574px);
+        @include position($l: 137px, $b: 1px, $z: 1);
 
         &::before {
             left: -137px;
@@ -216,11 +181,8 @@ $img-yutub-path: $img-base-path + "/youtube/";
     }
 
     &03 {
-        width: 574px;
-        height: 566px;
-        right: 2px;
-        bottom: 1px;
-        z-index: 2;
+        @include size($w:574px, $h:566px);
+        @include position($r: 2px, $b: 1px, $z: 2);
 
         &::before {
             right: 2px;
@@ -258,17 +220,14 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
     &.scroll {
         background-image: url(#{$img-main-path}scroll.png);
-        width: 48px;
-        height: 66px;
-        right: 60px;
-        top: 400px;
+        @include size($w:48px, $h:66px);
+        @include position($r: 60px, $t: 400px);
         animation-duration: 1s;
         animation-name: scroll_ani;
     }
 
     &-hide::after {
-        opacity: 0;
-        visibility: hidden;
+        @include hidden;
     }
 }
 
@@ -282,17 +241,12 @@ $img-yutub-path: $img-base-path + "/youtube/";
     }
 
     &1 {
-        width: 215px;
-        height: 69px;
-        top: 305px;
-        left: 103px;
-        z-index: 2;
+        @include size($w:215px, $h:69px);
+        @include position($l: 103px, $t: 305px, $z: 2);
 
         &>.book {
-            top: -70px;
-            left: 20px;
-            width: 229px;
-            height: 124px;
+            @include position($l: 20px, $t: -70px);
+            @include size($w:229px, $h:124px);
             background-image: url(#{$img-main-path}book.png);
             animation-name: book_ani;
             animation-duration: 1.3s;
@@ -300,44 +254,35 @@ $img-yutub-path: $img-base-path + "/youtube/";
     }
 
     &2 {
+        @include size($w:116px, $h:37px);
         top: 185px;
-        width: 116px;
-        height: 37px;
         opacity: .9;
         animation-duration: 25s;
     }
 
     &3 {
-        top: 280px;
-        left: 375px;
-        width: 177px;
-        height: 56px;
+        @include position($l: 375px, $t: 280px);
+        @include size($w:177px, $h:56px);
         opacity: .7;
         animation-duration: 20s;
     }
 
     &4 {
-        width: 220px;
-        height: 70px;
-        top: 240px;
-        right: 0;
+        @include size($w:220px, $h:70px);
+        @include position($t: 240px, $r: 0);
         opacity: .7;
         animation-duration: 20s;
         animation-name: cloud-right_ani;
     }
 
     &5 {
-        width: 143px;
-        height: 46px;
-        top: 335px;
-        right: 257px;
+        @include size($w:143px, $h:46px);
+        @include position($t: 335px, $r: 257px);
 
         &>.man {
             background-image: url(#{$img-main-path}man.png);
-            width: 156px;
-            height: 235px;
-            top: -160px;
-            left: 10px;
+            @include size($w:156px, $h:235px);
+            @include position($t: -106px, $l: 10px);
             animation-duration: 3s;
             animation-name: updown_ani;
         }
@@ -346,14 +291,11 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
 .run {
     background-image: url(#{$img-main-path}run.png);
-    width: 347px;
-    height: 203px;
-    top: 664px;
-    left: 27px;
+    @include size($w:347px, $h:203px);
+    @include position($l: 27px, $t: 664px,$z:1);
     animation-duration: 3s;
     animation-name: run_ani;
     animation-iteration-count: initial;
-    z-index: 1;
 }
 
 .twist__ani {
@@ -362,45 +304,35 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
 .people {
     &1 {
-        width: 122px;
-        height: 88px;
-        top: 605px;
-        left: 200px;
+        @include size($w:112px, $h:99px);
+        @include position($t: 605px, $l: 200px);
         animation-duration: 30s;
         animation-name: run-left_ani;
     }
 
     &2 {
-        width: 130px;
-        height: 122px;
-        top: 565px;
-        right: 118px;
+        @include size($w:130px, $h: 122px);
+        @include position($t: 565px, $l: 118px);
         animation-duration: 30s;
         animation-name: run-right_ani;
     }
 
     &3 {
-        width: 112px;
-        height: 240px;
-        top: 480px;
-        left: 340px;
+        @include size($w:112px, $h:240px);
+        @include position($t: 408px, $l: 340px);
         animation-duration: 2s;
     }
 
     &4 {
-        width: 140px;
-        height: 246px;
-        top: 490px;
-        right: 295px;
+        @include size($w:140px, $h:246px);
+        @include position($t: 490px, $r: 295px);
         animation-name: find_ani;
         animation-duration: 3s;
     }
 
     &5 {
-        width: 309px;
-        height: 227px;
-        top: 655px;
-        right: 67px;
+        @include size($w:309px, $h:227px);
+        @include position($t: 655px, $r: 67px);
         animation-duration: 3s;
     }
 }
@@ -573,10 +505,8 @@ $img-yutub-path: $img-base-path + "/youtube/";
 .card-news {
     &-stage {
         background-image: url(#{$img-card-path}cardnews_bg.png);
-        height: 1130px;
-        position: relative;
-        top: -1px;
-        max-width: 1920px;
+        @include size($maxW:1920px, $h:1130px);
+        @include position($p: relative, $t: -1px);
         background-position: center;
         margin: 0 auto;
     }
@@ -598,23 +528,20 @@ $img-yutub-path: $img-base-path + "/youtube/";
     &-pop {
         &__lists {
             padding-top: 85px;
-            display: flex;
+            @include display($d, $g: 24px 20px);
             flex-wrap: wrap;
-            gap: 24px 20px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         &__list {
             flex: 1 1 calc(25% - 20px*3/4);
-            width: 100%;
-            max-width: calc(25% - 20px*3/4);
+            @include size($w:100%, $maxW:calc(25% - 20px*3/4));
         }
 
         &__btn {
             cursor: pointer;
-            width: 335px;
-            height: 335px;
+            @include size($w:335px, $h:335px);
             position: relative;
             border-radius: 30px;
             overflow: hidden;
@@ -625,19 +552,14 @@ $img-yutub-path: $img-base-path + "/youtube/";
                 background-image: url(#{img-card-path}card-news-pop__btn-deco.png);
                 background-size: contain;
                 background-repeat: no-repeat;
-                width: 46px;
-                height: 46px;
+                @include size($w:46px, $h:46px);
                 border-radius: 50%;
-                position: absolute;
-                z-index: 1;
-                right: 10px;
-                bottom: 10px;
-                transition:$transition;
+                @include position($p, $b: 10px, $r: 10px, $z: 1);
+                transition: $transition;
             }
 
             &:hover::after {
-                right: 15px;
-                bottom: 15px;
+                @include position($b: 15px, $r: 15px);
                 scale: 1.1;
             }
         }
@@ -659,14 +581,12 @@ $img-yutub-path: $img-base-path + "/youtube/";
         }
 
         & .popup__img {
-            max-width: 600px;
-            height: 600px;
+            @include size($maxW:600px, $h:600px);
         }
 
         & .popup__footer {
             border-radius: 0 0 30px 30px;
-            position: relative;
-            top: -1px;
+            @include position($p: relative, $t: -1px);
             padding: 0 2rem 2rem;
             background-color: #fff;
         }
@@ -691,8 +611,7 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
     &__lists {
         margin-top: 85px;
-        display: flex;
-        flex-wrap: wrap;
+        @include display($d, $g: 20px);
         gap: 20px;
     }
 
@@ -706,14 +625,10 @@ $img-yutub-path: $img-base-path + "/youtube/";
             content: '';
             display: block;
             background-image: url(#{$img-yutub-path}youtube_deco.png);
-            width: 74px;
-            height: 74px;
-            position: absolute;
-            z-index: 1;
-            top: calc(50% - 30px);
-            left: 50%;
+            @include size($w:74px, $h:74px);
+            @include position($p, $t: calc(50% - 30px), $l, $z: 1);
             transform: translate(-50%, -50%);
-            transition:$transition;
+            transition: $transition;
         }
 
         &:hover::after {
@@ -763,45 +678,36 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
     &__present {
         padding: 45px 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include display($d, $jc, $ai);
     }
 
     &__content {
-        width: 100%;
-        height: 840px;
+        @include size($w:100%, $h:840px);
         background-image: url(#{$img-event-path}event_content-wrap.png);
         background-repeat: no-repeat;
         box-sizing: border-box;
         padding: 118px 75px 0 70px;
-        display: flex;
-        justify-content: space-between;
+        @include display($d, $jc);
         position: relative;
 
         &::after {
             content: '';
             display: block;
             background-image: url(#{$img-event-path}event__content-deco.png);
-            width: 480px;
-            height: 324px;
-            position: absolute;
-            left: 50%;
+            @include size($w:480px, $h:324px);
+            @include position($p, $b: 17px, $l);
             transform: translateX(-50%);
-            bottom: 17px;
         }
     }
 
     &-keyword {
         &__btn {
             background-repeat: no-repeat;
-            width: 343px;
-            height: 94px;
+            @include size($w:343px, $h:94px);
             border-radius: 94px;
             cursor: pointer;
-            position: relative;
-            z-index: 1;
-            transition:$transition;
+            @include position($p: relative, $z: 1);
+            transition: $transition;
             animation-timing-function: linear;
             animation-duration: 1s;
             animation-fill-mode: forwards;
@@ -812,21 +718,17 @@ $img-yutub-path: $img-base-path + "/youtube/";
                 display: block;
                 background-repeat: no-repeat;
                 position: absolute;
-                opacity: 0;
-                visibility: hidden;
-                transition:$transition;
+               @include hidden;
+                transition: $transition;
             }
 
             &::before {
                 background-image: url(../images/common/hand.png);
-                width: 73px;
-                height: 86px;
-                right: 0;
-                top: 20px;
+                @include size($w:73px, $h: 86px);
+                @include position($t: 20px, $r: 0, $z: 1);
                 animation-timing-function: linear;
                 animation-iteration-count: infinite;
                 animation-fill-mode: forwards;
-                z-index: 1;
                 animation-duration: 2s;
             }
 
@@ -838,101 +740,39 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
             &::after {
                 background-image: url(#{$img-event-path}deco-check.png);
-                width: 84px;
-                height: 68px;
-                top: 0;
-                right: -14px;
+                @include size($w: 84px, $h: 68px);
+                @include position($t: 0, $r: -14px);
             }
 
             &.on::after {
-                opacity: 1;
-                visibility: visible;
+                @include visible;
             }
 
             &01 {
                 &.move {
                     z-index: 2;
                 }
-
-                @keyframes btn01_move {
-                    0% {
-                        top: 0;
-                        left: 0;
-                    }
-
-                    100% {
-                        top: 282px;
-                        left: 624px;
-                    }
-                }
             }
-
-            &02 {
-                @keyframes btn02_move {
-                    0% {
-                        top: 0;
-                        left: 0;
-                    }
-
-                    100% {
-                        top: 150px;
-                        left: 624px;
-                    }
-                }
-            }
-
-            &03 {
-                @keyframes btn03_move {
-                    0% {
-                        top: 0;
-                        left: 0;
-                    }
-
-                    100% {
-                        top: 18px;
-                        left: 624px;
-                    }
-                }
-            }
-
-            &04 {
-                @keyframes btn04_move {
-                    0% {
-                        top: 0;
-                        left: 0;
-                    }
-
-                    100% {
-                        top: -114px;
-                        left: 624px;
-                    }
-                }
-            }
-
         }
 
         &__lists {
             &:not(:has(.move)) .keyword__btn01::before {
-                opacity: 1;
-                visibility: visible;
+                @include visible;
                 animation-name: keyword01;
             }
 
             &:has(.keyword__btn01.on) .keyword__btn02::before {
-                opacity: 1;
-                visibility: visible;
+                @include visible;
                 animation-name: keyword02;
             }
 
             &:has(.keyword__btn02.on) .keyword__btn03::before {
-                opacity: 1;
-                visibility: visible;
+                @include visible;
                 animation-name: keyword03;
             }
 
             &:has(.keyword__btn03.on) .keyword__btn04::before {
-                opacity: 1;
-                visibility: visible;
+                @include visible;
                 animation-name: keyword04;
             }
         }
@@ -954,19 +794,14 @@ $img-yutub-path: $img-base-path + "/youtube/";
             background-image: url(#{$img-event-path}event01-popup__close.png);
             background-repeat: no-repeat;
             background-size: contain;
-            width: 253px;
-            height: 70px;
+            @include size($w:253px, $h:70px);
+            @include position($p: relative, $t: 0, $r: 0);
             margin: 0 auto;
-            position: relative;
-            right: 0;
-            top: 0;
             border-radius: 70px;
 
             &::before {
-                top: 20px;
-                left: initial;
-                right: 0;
-                transition:$transition;
+                @include position($t: 20px, $r: 0, $l: initial);
+                transition: $transition;
                 transform: initial;
             }
 
@@ -976,6 +811,46 @@ $img-yutub-path: $img-base-path + "/youtube/";
         }
     }
 
+}
+
+@keyframes btn01_move {
+    0% {
+        @include position($t: 0, $l: 0);
+    }
+
+    100% {
+        @include position($t: 282px, $l: 624px);
+    }
+}
+
+@keyframes btn02_move {
+    0% {
+        @include position($t: 0, $l: 0);
+    }
+
+    100% {
+        @include position($t: 150px, $l: 624px);
+    }
+}
+
+@keyframes btn03_move {
+    0% {
+        @include position($t: 0, $l: 0);
+    }
+
+    100% {
+        @include position($t: 18px, $l: 624px);
+    }
+}
+
+@keyframes btn04_move {
+    0% {
+        @include position($t: 0, $l: 0);
+    }
+
+    100% {
+        @include position($t: -144px, $l: 624px);
+    }
 }
 
 @for $i from 1 through 4 {
@@ -994,70 +869,58 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
 @keyframes keyword01 {
     0% {
-        right: 0;
-        top: 0;
+        @include position($t: 0, $r: 0);
     }
 
     100% {
-        right: -500px;
-        top: 300px;
+        @include position($t: 300px, $r: -500px);
     }
 }
 
 @keyframes keyword02 {
     0% {
-        right: 0;
-        top: 0;
+        @include position($t: 0, $r: 0);
     }
 
     100% {
-        right: -500px;
-        top: 200px;
+        @include position($t: 200px, $r: -500px);
     }
 }
 
 @keyframes keyword03 {
     0% {
-        right: 0;
-        top: 0;
+        @include position($t: 0, $r: 0);
     }
 
     100% {
-        right: -500px;
-        top: 50px;
+        @include position($t: 50px, $r: -500px);
     }
 }
 
 @keyframes keyword04 {
     0% {
-        right: 0;
-        top: 0;
+        @include position($t: 0, $r: 0);
     }
 
     100% {
-        right: -500px;
-        top: -80px;
+        @include position($t: -80px, $r: -500px);
     }
 }
 
 .event-drop-wrap {
     background-image: url(#{$img-event-path}event-drop-wrap.png);
     background-repeat: no-repeat;
-    width: 680px;
-    height: 481px;
+    @include size($w: 680px, $h: 481px);
     position: relative;
 }
 
 .drop__zone {
     background-image: url(#{$img-event-path}drop_zone.png);
     background-repeat: no-repeat;
-    width: 343px;
-    height: 94px;
+    @include size($w: 343px, $h: 94px);
     border-radius: 94px;
-    position: absolute;
-    left: 50%;
+    @include position($p, $b: 105px, $l);
     transform: translateX(-50%);
-    bottom: 105px;
 }
 
 @keyframes zoomClick {
@@ -1102,7 +965,6 @@ $img-yutub-path: $img-base-path + "/youtube/";
         background-size: contain;
         display: flex;
         flex-wrap: wrap;
-        gap: 140px 0;
     }
 
     &__list {
@@ -1115,21 +977,17 @@ $img-yutub-path: $img-base-path + "/youtube/";
         content: '';
         display: block;
         background-image: url(#{$img-step-path}life-purpose.png);
-        width: 291px;
-        height: 147px;
-        position: absolute;
-        bottom: 60px;
-        transition:$transition;
+        @include size($w:291px, $h:147px);
+        @include position($p, $b: 60px, );
+        transition: $transition;
     }
 
     &.step {
         &01 {
             & .life-cycle__deco {
                 background-image: url(#{$img-step-path}life-ani-1.png);
-                width: 205px;
-                height: 203px;
-                bottom: 70px;
-                left: 330px;
+                @include size($w:205px, $h: 203px);
+                @include position($b: 70px, $l: 300px);
             }
 
             &:has(.on) .life-cycle__deco {
@@ -1143,10 +1001,8 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
         &03 {
             & .life-cycle__deco {
-                width: 275px;
-                height: 252px;
-                bottom: 300px;
-                right: -100px;
+                @include size($w: 275px, $h:252px);;
+                @include position($b: 300px, $r: -100px);
             }
 
             &::before {
@@ -1154,8 +1010,7 @@ $img-yutub-path: $img-base-path + "/youtube/";
             }
 
             & .life-cycle__btns {
-                bottom: -80px;
-                left: -110px;
+                @include position($b: -80px, $r: -110px);
             }
         }
 
@@ -1169,20 +1024,16 @@ $img-yutub-path: $img-base-path + "/youtube/";
             }
 
             & .life-cycle__deco {
-                width: 340px;
-                height: 254px;
-                bottom: 340px;
-                left: 95px;
+                @include size($w:340px, $h:254px);
+                @include position($b: 340px, $l: 95px);
             }
 
         }
 
         &05 {
             & .life-cycle__deco {
-                width: 340px;
-                height: 242px;
-                bottom: 70px;
-                left: -470px;
+                @include size($w:340px, $h:232px);
+                @include position($b: 70px, $l: -470px);
             }
 
             &::before {
@@ -1196,14 +1047,12 @@ $img-yutub-path: $img-base-path + "/youtube/";
             }
 
             & .life-cycle__deco {
-                width: 348px;
-                height: 324px;
-                bottom: 300px;
-                right: 0;
+                @include size($w:348px, $h:324px);
+                @include position($b: 300px, $r: 0);
             }
         }
     }
-    
+
     &:nth-child(3n) {
         flex: 1 1 100%;
     }
@@ -1215,8 +1064,7 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
         &.start {
             background-image: url(#{$img-step-path}life_start.png);
-            width: 388px;
-            height: 202px;
+            @include size($w:388px, $h:202px);
             top: -65px;
 
             &::before,
@@ -1225,70 +1073,57 @@ $img-yutub-path: $img-base-path + "/youtube/";
                 display: block;
                 background-repeat: no-repeat;
                 background-size: contain;
-                position: absolute;
-                z-index: 1;
+                @include position($p, $z: 1);
             }
 
             &::before {
                 background-image: url(#{$img-step-path}life-deco-wood.png);
-                width: 170px;
-                height: 68px;
-                bottom: -5px;
-                left: -60px;
+                @include size($w:170px, $h:68px);
+                @include position($b: -5px, $r: -60px);
             }
 
             &::after {
                 background-image: url(#{$img-step-path}life-deco-zoom.png);
-                width: 104px;
-                height: 136px;
-                right: 30px;
-                bottom: -40px;
+                @include size($w:104px, $h:136px);
+                @include position($b: -40px, $r: 30px);
             }
         }
     }
 
     &__btn {
-        width: 203px;
-        height: 70px;
+        @include size($w:203px, $h:70px);
         background-repeat: no-repeat;
         background-size: contain;
         border-radius: 70px;
         cursor: pointer;
         position: relative;
-        transition:$transition;
+        transition: $transition;
 
         &s {
-            position: relative;
-            bottom: -68px;
-            opacity: 0;
-            visibility: hidden;
+            @include position($p: relative, $b: -68px);
+            @include hidden;
         }
 
         &.on {
-            opacity: 0;
-            visibility: hidden;
+            @include hidden;
         }
 
         &::after {
-            top: 20px;
             content: '';
-            right: -20px;
+            @include position($t: 20px, $r: -20px);
         }
 
         &.start {
             background-image: url(#{$img-step-path}btn_start.png);
-            position: absolute;
-            bottom: -90px;
-            left: 70px;
+            @include position($p, $b: -90px, $l: 70px);
         }
     }
 
     &__deco {
         background-size: contain;
-        transition:$transition;
+        transition: $transition;
         animation-iteration-count: 1;
-        opacity: 0;
-        visibility: hidden;
+        @include hidden;
     }
 
     &-pop__btn {
@@ -1304,9 +1139,11 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
 @for $i from 2 through 6 {
     $image-index: $i - 1;
+
     .life-cycle.active.step0#{$i}::before {
         background-image: url(#{$img-step-path}life-purpose-#{$image-index}.png);
     }
+
     .life-cycle.step0#{i} .life-cycle__deco {
         background-image: url(#{$img-step-path}life-ani-#{i}.png);
 
@@ -1318,14 +1155,12 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
 .on+.life-cycle__deco {
     animation-duration: 1.5s;
-    opacity: 1;
-    visibility: visible;
+    @include visible;
 }
 
 .move .life-cycle__deco {
     animation-duration: 2s;
-    opacity: 1;
-    visibility: visible;
+    @include visible;
 }
 
 @keyframes life-cycle-ani-1 {
@@ -1340,38 +1175,31 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
 @keyframes life-cycle-ani-2 {
     0% {
-        right: -100px;
-        bottom: 300px;
+        @include position($b: 300px, $r: -100px);
     }
 
     25% {
-
-        right: -100px;
-        bottom: 50px;
+        @include position($b: 50px, $r: -100px);
     }
 
     100% {
-        bottom: 55px;
-        right: 690px;
+        @include position($b: 55px, $r: 690px);
     }
 }
 
 @keyframes life-cycle-ani-3 {
     0% {
-        bottom: 340px;
-        left: 95px;
+        @include position($b: 340px, $l: 95px);
     }
 
     50% {
         background-image: url(#{$img-step-path}life-ani-3.png);
-        bottom: 200px;
-        left: -195px;
+        @include position($b: 200px, $l: -195px);
     }
 
     100% {
         background-image: url(#{$img-step-path}life-ani-3.png);
-        bottom: 70px;
-        left: -95px;
+        @include position($b: 70px, $l: -95px);
     }
 }
 
@@ -1392,24 +1220,20 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
 @keyframes life-cycle-ani-5 {
     0% {
-        bottom: 300px;
-        right: 0;
+        @include position($b: 300px, $r: 0);
     }
 
     30% {
-        bottom: 50px;
-        right: 0;
+        @include position($b: 50px, $r: 0);
     }
 
     100% {
-        bottom: 50px;
-        right: 700px;
+        @include position($b: 50px, $r: 700px);
     }
 }
 
 .active .life-cycle__btns {
-    opacity: 1;
-    visibility: visible;
+    @include visible;
 }
 
 .step__popup {
@@ -1424,8 +1248,7 @@ $img-yutub-path: $img-base-path + "/youtube/";
         border-radius: 30px 30px 0 0;
 
         &>.popup__close {
-            width: 54px;
-            height: 64px;
+            @include size($w:54px, $h:64px);
             background-color: $color-blue;
             right: -54px;
             top: 30px;
@@ -1433,31 +1256,27 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
             &::before,
             &::after {
-                width: 35px;
-                height: 2px;
+                @include size($w:35px, $h:2px);
                 border-radius: 2px;
             }
         }
     }
 
     & .popup-head-wrapper {
-        width: 100%;
-        height: 60px;
+        @include size($w:100%, $h:60px);
     }
 
     & .popup__body {
         padding: 0 20px;
         background-color: $color-blue;
-        position: relative;
-        top: -1px;
+        @include position($p:relative, $t:-1px)
     }
 
     & .tab-stage {
         background-color: #fff;
         padding: 10px;
         border-radius: 0 0 20px 20px;
-        position: relative;
-        top: -1px;
+        @include position($p: relative, $t: -1px);
         height: 360px;
         overflow: hidden;
     }
@@ -1466,8 +1285,7 @@ $img-yutub-path: $img-base-path + "/youtube/";
         padding: 0 20px 20px;
         border-radius: 0 0 30px 30px;
         background-color: $color-blue;
-        position: relative;
-        top: -2px;
+        @include position($p: relative, $t: -2px);
         text-align: center;
         padding-top: 20px;
 
@@ -1475,8 +1293,7 @@ $img-yutub-path: $img-base-path + "/youtube/";
             background-repeat: no-repeat;
             background-image: url(#{$img-step-path}popup__close.png);
             background-size: contain;
-            width: 270px;
-            height: 60px;
+            @include size($w:270px, $h:60px);
             position: relative;
             cursor: pointer;
 
@@ -1489,13 +1306,10 @@ $img-yutub-path: $img-base-path + "/youtube/";
             content: '';
             display: block;
             background: url(../images/common/hand.png) no-repeat;
-            width: 73px;
-            height: 86px;
-            position: absolute;
-            top: 20px;
-            right: -20px;
+            @include size($w:73px, $h:86px);
+            @include position($p, $t: 20px, $r: -20px);
             animation: 1s eventClick infinite linear forwards;
-            transition:$transition;
+            transition: $transition;
             transform: initial;
         }
 
@@ -1507,25 +1321,19 @@ $img-yutub-path: $img-base-path + "/youtube/";
 }
 
 .tab-btns {
-    display: flex;
-    gap: 0 5px;
+    @include display($d, $g:0 5px);
     width: 100%;
 }
 
 .popup-tab__btn {
     flex: 1 1 50%;
     border-radius: 20px 20px 0 0;
-    width: 100%;
+    @include size($w:100%, $h:60px);
     color: #fff;
     background-color: $color-green;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    line-height: 28px;
-    font-weight: 600;
-    transition:$transition;
+    @include display($d, $ai, $jc:center);
+    @include txt($s: 24px, $l: 28px, $w: 600);
+    transition: $transition;
     cursor: pointer;
 
     &.active {
@@ -1544,16 +1352,10 @@ $img-yutub-path: $img-base-path + "/youtube/";
         min-height: 130px;
         padding: 20px 10px;
         box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
+        @include display($d, $ai, $jc:center,$fd);
+        
         &>p {
-            color: #222;
-            font-size: 20px;
-            line-height: 24px;
-            font-weight: 500;
+            @include txt($s:20px, $l:24px, $w:500, $c:#222)
         }
     }
 
@@ -1563,8 +1365,7 @@ $img-yutub-path: $img-base-path + "/youtube/";
         &>p {
             padding-left: 20px;
             position: relative;
-            font-size: 20px;
-            line-height: 24px;
+            @include txt($s:20px, $l:24px);
             margin-bottom: 10px;
             display: block;
 
@@ -1573,21 +1374,17 @@ $img-yutub-path: $img-base-path + "/youtube/";
                 content: '';
                 display: block;
                 border-radius: 50%;
-                position: absolute;
-                top: 50%;
+                @include position($p, $t, $l: 0);
                 transform: translateY(-50%);
-                left: 0;
             }
 
             &::before {
                 background-color: $color-green;
-                width: 14px;
-                height: 14px;
+                @include size($w:14px, $h:14px);
             }
 
             &::after {
-                width: 8px;
-                height: 8px;
+                @include size($w:8px, $h:8px);
                 background-color: #fff;
                 left: 3px;
             }
@@ -1597,24 +1394,19 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
 .next {
     &-stage {
-        opacity: 0;
-        visibility: hidden;
+        @include hidden;
         height: 0;
-        transition:$transition;
+        transition: $transition;
 
         &.active {
-            opacity: 1;
-            visibility: visible;
+            @include visible;
             height: auto;
         }
     }
 
     &__tit {
         padding-bottom: 20px;
-        font-size: 36px;
-        font-weight: 700;
-        text-align: center;
-        color: #fff;
+        @include txt($s:36px, $w:700, $c:#fff,$a: center);
     }
 
     &-wrapper {
@@ -1623,36 +1415,28 @@ $img-yutub-path: $img-base-path + "/youtube/";
         padding: 10px 15px;
         box-sizing: border-box;
         word-break: keep-all;
-        color: #222;
-        font-size: 22px;
-        line-height: 34px;
+        @include txt($s:22px,$l: 34px, $c:#222, $a:center);
         height: 360px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        @include display($d, $ai, $jc:center);
         position: relative;
 
         &::before,
         &::after {
             content: '';
             display: block;
-            width: 30px;
-            height: 20px;
+            @include size($w:30px, $h:20px);
             background-image: url(#{$img-step-path}next_deco.png);
             background-repeat: no-repeat;
             background-size: contain;
-            position: absolute;
+            @include position($p);
         }
 
         &::before {
-            top: 10px;
-            left: 10px;
+            @include position($t: 10px, $l: 10px);
         }
 
         &::after {
-            bottom: 10px;
-            right: 10px;
+            @include position($b: 10px, $r: 10px);
             transform: rotate(180deg);
         }
     }
@@ -1668,17 +1452,12 @@ $img-yutub-path: $img-base-path + "/youtube/";
 
     &__link {
         background-color: transparent;
-        position: absolute;
-        width: 525px;
-        height: 105px;
-        bottom: 162px;
-        right: 430px;
+        @include size($w:525px, $h:105px);
+        @include position($p, $b: 162px, $r: 430px);
         border-radius: 53px;
 
         &::after {
-            right: -30px;
-            top: 50px;
-            z-index: 5;
+            @include position($t: 50px, $r: -30px, $z: 5);
         }
     }
 }
@@ -1688,26 +1467,19 @@ $img-yutub-path: $img-base-path + "/youtube/";
     &-stage {
         background-color: #444;
         height: 350px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 55px;
-        flex-direction: column;
+        @include display($d, $ai, $jc:center,$fd,$g:55px);
     }
 
     &__list {
         background-image: url(#{$img-base-path}share_icon.png);
-        width: 738px;
-        height: 98px;
+        @include size($w:738px, $h:98px);
         margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
+        @include display($d, $jc);
     }
 
     &__link {
         display: block;
-        width: 98px;
-        height: 98px;
+        @include size($w:98px, $h:98px);
         border-radius: 30px;
         cursor: pointer;
     }
@@ -1718,21 +1490,15 @@ $img-yutub-path: $img-base-path + "/youtube/";
 .visitor {
     &-stage {
         height: 165px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include display($d, $ai, $jc:center);
     }
 
     &__tit {
-        font-size: 30px;
-        font-weight: 600;
-        color: #222218;
+        @include txt($s:30px,$w: 600px, $c:#222218);
 
         &>em {
             font-style: normal;
-            color: #ff9102;
-            font-size: 46px;
-            font-weight: 900;
+            @include txt($s:46px,$w: 900px, $c:#ff9102);
         }
     }
 }
@@ -1744,14 +1510,9 @@ $img-yutub-path: $img-base-path + "/youtube/";
 }
 
 .typing__txt {
-    font-size: 36px;
-    line-height: 36px;
-    font-weight: 700;
-    color: #313131;
+    @include txt($s:36px,$l:36px, $w: 700, $c:#313131);
     border-right: 2px solid #333;
-    position: absolute;
-    top: 170px;
-    left: 580px;
+    @include position($p, $t: 170px, $l: -580px);
     animation: typing 5s infinite steps(20);
     white-space: nowrap;
     overflow: hidden;

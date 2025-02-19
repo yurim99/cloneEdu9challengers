@@ -5,6 +5,48 @@ $color-yellow: #edab1d;
 $transition: all .15s ease-in;
 
 $img-base-path :"../images/common/";
+@mixin position($p: absolute, $t: 50%, $b: null, $l: 50%, $r: null, $z: null) {
+    position: $p;
+    top: $t;
+    bottom: $b;
+    left: $l;
+    right: $r;
+    z-index: $z;
+}
+
+@mixin size($w: 100%, $minW: null, $maxW: null, $h: 100%, $minH: null, $maxH: null) {
+    width: $w;
+    min-width: $minW;
+    max-width: $maxW;
+    height: $h;
+    min-height: $minH;
+    max-height: $maxH;
+}
+
+@mixin txt($s: null, $w: null, $l: null, $c: null, $a: null) {
+    font-size: $s;
+    font-weight: $w;
+    line-height: $l;
+    color: $c;
+    align-items: $a;
+}
+
+@mixin display($d:flex, $jc:space-between, $ai: center, $g: null, $fd:column,){
+    display: $d;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $g;
+    flex-direction: $fd;
+}
+
+@mixin visible {
+    opacity: 1;
+    visibility: visible;
+}
+@mixin hide {
+    opacity: 0;
+    visibility: hidden;
+}
 
 @mixin imgPath($img-name) {
     background-image: url(#{$img-base-path}#{$img-name}.png);
@@ -42,34 +84,26 @@ body {
 }
 
 .dim {
-    width: 100%;
-    height: 100%;
-    position: fixed;
+    @include size($w, $h:100%);
+    @include position($p:fixed, $z:10);
+    @include hidden;
     background-color: #000000cc;
-    z-index: 10;
-    opacity: 0;
-    visibility: hidden;
     transition: $transition;
 
     &.active {
-        opacity: 1;
-        visibility: visible;
+        @include visible;
     }
 }
 
 
 .video-stage {
     position: relative;
-    width: 100%;
-    height: 0;
+    @include size($w, $h:0);
     padding-top: 56.25%;
 
     &>.video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        @include position($p, $t:0, $l:0);
+        @include size($w, $h:100%);
     }
 }
 
@@ -77,8 +111,7 @@ body {
 /* header */
 .header {
     &-stage {
-        width: 100%;
-        height: 5rem;
+        @include size($w, $h:5rem);
         background-color: #fff;
         background-position: center;
         background-size: auto;
@@ -86,33 +119,25 @@ body {
     }
 
     &__links {
-        position: relative;
-        width: 574px;
-        height: 37px;
-        top: 50%;
-        left: 50%;
+        @include size($w: 547px, $h:37px);
+        @include position($p:relative, $t:50%, $l:50%);
         transform: translate(-50%, -50%);
     }
 
     &__link {
         display: block;
         background-color: transparent;
-        height: 30px;
-        width: 30px;
+        @include size($w: 30px, $h:30px);
         position: absolute;
 
         &.daum {
-            left: -5px;
-            width: calc(70px + 10px);
-            height: calc(30px + 10px);
-            top: 0;
+            @include position($t:0, $l:-5px);
+            @include size($w: calc(70px + 10px), $h:calc(30px + 10px));
         }
 
         &.moe {
-            left: 105px;
-            width: 95px;
-            top: 0;
-            height: 36px;
+            @include size($w: 95px, $h: 36px);
+            @include position($t:0, $l:105px);
         }
     }
 }
@@ -126,28 +151,20 @@ body {
 
 .quick-menu {
     &-stage {
-        position: fixed;
-        z-index: 9;
-        top: 125px;
-        right: 30px;
-        width: 100px;
-        height: 248px;
+        @include position($p:fixed, $z:9, $t:125, $r: 30px);
+        @include size($w: 100px, $h: 248px);
         @include imgPath(quick-menu_bg);
-
     }
 
     &__lists {
         padding-top: 112px;
-        display: flex;
         flex-wrap: wrap;
-        gap: 4px;
-        justify-content: center;
+        @include display($d, $g:4px, $jc:center )
     }
 
     &__icon {
         display: block;
-        width: 38px;
-        height: 38px;
+        @include size($w: 38px, $h: 38px);
         border-radius: 50%;
 
         &.youtube {
@@ -179,52 +196,37 @@ body {
 
 /* popup */
 .popup {
-    position: fixed;
-    z-index: 11;
-    top: 50%;
-    left: 50%;
+    @include position($p:fixed, $z:11, $t:50%, $l);
     transform: translate(-50%, -50%);
-    opacity: 0;
-    visibility: hidden;
+    @include hidden;
 
     &.active {
-        opacity: 1;
-        visibility: visible;
+        @include visible;
     }
 
     &__head {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include display($d, $jc:center, $ai);
         position: relative;
 
         &>p {
             color: #fff;
-            font-size: 30px;
-            font-weight: 600;
-            text-align: center;
+            @include txt($s:30px, $w:600, $a:center);
         }
 
         &>.popup__close {
             display: block;
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            right: -55px;
-            top: 20px;
+            @include size($w:40px, $h: 40px);
+            @include position( $p, $r: -55px, $t: 20px);
             cursor: pointer;
-
+            
             &::before,
             &::after {
                 content: '';
                 display: block;
-                width: 100%;
-                height: 3px;
+                @include size($w, $h: 3px);
                 border-radius: 3px;
                 background-color: #fff;
-                position: absolute;
-                top: 50%;
-                left: 50%;
+                @include position( $p, $l, $t);
             }
         }
     }
@@ -259,16 +261,12 @@ body {
 
 .popup-swiper {
     &__btns {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
+        @include display($d, $jc:center, $ai, $g: 20px);
     }
 
     &__btn {
         cursor: pointer;
-        width: 70px;
-        height: 70px;
+        @include size($w: 70px, $h: 70px);
         border-radius: 50%;
         background-repeat: no-repeat;
         background-size: contain;
@@ -297,13 +295,11 @@ body {
     }
 
     &-container {
-        max-width: 1300px;
-        width: 100%;
+        @include size($w, $maxW: 1300px, $h);
         padding: 0 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 100%;
         margin: 0 auto;
 
         &>div p {
@@ -323,18 +319,14 @@ body {
 /* 네비게이션 */
 .navi {
     &-stage {
-        position: fixed;
+        @include position( $p:fixed, $z: 6,$b: -100%);
         background-color: #1b1c24cc;
-        bottom: -100%;
         width: 100%;
-        z-index: 6;
         transition: all .2s ease-in;
-        visibility: hidden;
-        opacity: 0;
+        @include hidden;
 
         &.active {
-            visibility: visible;
-            opacity: 1;
+            @include visible;
             bottom: 0;
         }
     }
@@ -343,11 +335,9 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        max-width: 1380px;
-        width: 100%;
+        @include size($maxW: 1380px, $w:100%, $h:90px);
         padding: 0 20px;
         margin: 0 auto;
-        height: 90px;
 
         & .btn {
             background-repeat: no-repeat;
@@ -359,51 +349,40 @@ body {
 
 .all-menu {
     &-stage {
-        position: absolute;
         width: 500px;
         background-color: #263E99;
-        left: 0;
+        @include position($p, $l:0, $b:-100%);
         padding: 15px 30px 0;
         box-sizing: border-box;
         transition: all .2s ease-in;
-        opacity: 0;
-        visibility: hidden;
-        bottom: -100%;
+        @include hidden;
 
         &.active {
-            opacity: 1;
-            visibility: visible;
+            @include visible;
             bottom: 0;
         }
     }
 
     &__btn {
-        width: 70px;
-        height: 36px;
+        @include size($w:70px,$h: 36px);
         @include imgPath(allmenu);
     }
 
     &__close {
         background-color: #999;
-        width: 45px;
-        height: 45px;
+        @include size($w: 45px,$h: 45px);
         border-radius: 5px;
-        position: absolute;
-        right: 20px;
-        z-index: 1;
+        @include position($p, $r:20px, $z:1);
         cursor: pointer;
 
         &::before,
         &::after {
             content: '';
             display: block;
-            position: absolute;
             background-color: #fff;
-            width: 5px;
-            height: 30px;
+            @include size($w: 5px,$h: 30px);
             border-radius: 5px;
-            top: 50%;
-            left: 50%;
+            @include position($p, $l:50%, $t:50%);
         }
 
         &::before {
@@ -424,8 +403,7 @@ body {
         align-items: center;
         color: #fff;
         padding: 20px;
-        font-size: 22px;
-        line-height: 32px;
+        @include txt($s:22px, $l:32px);
         height: 112px;
         box-sizing: border-box;
         transition: all .2s ease-in;
@@ -446,8 +424,7 @@ body {
 }
 
 .event__btn {
-    width: 570px;
-    height: 73px;
+    @include size($w: 570px, $h:73px);
     border-radius: 37px;
 
     &.event01 {
@@ -461,8 +438,7 @@ body {
 
 .top__btn {
     @include imgPath(top);
-    width: 70px;
-    height: 70px;
+    @include size($w: 70px, $h:70px);
     border-radius: 50%;
 }
 
@@ -471,8 +447,7 @@ body {
     content: '';
     display: block;
     background-image: url(../images/common/hand.png);
-    width: 73px;
-    height: 86px;
+    @include size($w: 73px, $h:86px);
     position: absolute;
     animation: 1s zoomClick infinite linear forwards;
     background-color: transparent;
